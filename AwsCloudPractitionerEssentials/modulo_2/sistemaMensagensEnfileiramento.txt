@@ -1,0 +1,30 @@
+Sistemas de mensagens e enfileiramento.
+
+Arquitetura de alto acoplamento --> se um único componente falhar causa problemas para toda a aplicação.
+
+Arquitetura de Aclopamento Flexível:
+Uma única falha não causará falhas em cascata, pois será isoladoo componente.
+
+Amazon simple queue service(SQS)
+*Envia mensagens,
+*Armazena mensagens,
+*Recebe mensagens,
+*Entre componentes de software,
+*Em qualquer volume.
+
+Filas SQS são onde as mensagens são colocadas até serem processadas.
+
+Carga útil --> Dados contidos em uma mensagem.
+
+Use o Amazon SQS para enviar, armazenar e receber mensagens entre componentes de software, sem perder mensagens ou precisar que outros serviços estejam disponíveis. 
+No Amazon SQS, um aplicativo envia mensagens para uma fila. Um usuário ou serviço recupera uma mensagem da fila, processa-a e a exclui da fila.
+
+Amazon simple notification service(SNS)
+Tópico no SNS da amazon --> Canal para a entrega de mensagens e é publicada mensagens para os assinantes.
+Envia notificações;
+
+
+O Amazon Simple Notification Service (Amazon SNS) é um serviço de publicação/assinatura. Usando tópicos do Amazon SNS,
+ um editor publica mensagens para assinantes.
+
+No Amazon SNS, os assinantes podem ser servidores web, endereços de e-mail, funções do AWS Lambda ou várias outras opções.
