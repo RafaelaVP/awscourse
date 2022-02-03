@@ -70,15 +70,20 @@ $ git clone https://github.com/RafaelaVP/awscourse.git
 # Access
 $ cd awscourse
 
-
 Improvements
 
 Courses in progress...
 
+
+# Author's information
+```
 
 Made with :heart: by <a href="https://github.com/RafaelaVP" target="_blank">{{Rafaela Valerio}}</a>
 
 &#xa0;
 
 <a href="#top">Back to top</a>
+
+```
+
 ```
