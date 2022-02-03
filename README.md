@@ -59,9 +59,9 @@ Module 3 ->
 
 ## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com)
 
-## :checkered_flag: Starting
+## :checkered_flag: Access to the course summary.
 
 ```bash
 # Clone this project
@@ -70,21 +70,9 @@ $ git clone https://github.com/RafaelaVP/awscourse.git
 # Access
 $ cd awscourse
 
-<br>
-
-
-
-
-
-
-
-
 Improvements
-<br>
+
 Courses in progress...
-
-<br>
-
 
 Made with :heart: by <a href="https://github.com/RafaelaVP" target="_blank">{{Rafaela Valerio}}</a>
 
