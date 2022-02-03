@@ -1,0 +1,17 @@
+Amazon EC2
+As instâncias fornecem poder computacional altamente flexivél, econômico e rápido.
+
+Alocação múltipla: Compartilhar hardware subjacente.
+Compartilhamento de hardward entre máquinas virtuais.
+As intâncias são isoladoas uma das outras.
+
+configurações da amazon ec2 ---> windows, linux, aplicações internas de negócios, web apps, banco de dados, software de terceiros;
+
+Escalabilidade vertical de uma instância.
+Quando se começa com ela menor e tem a opção de aumentar a memória ou cpu de acordo com sua aplicação.
+
+Você controla a configuração de rede da Amazon EC2.
+
+Facilidade em provicionar instancias ecs.
+
+Poder computacional como serviço (CaaS)
