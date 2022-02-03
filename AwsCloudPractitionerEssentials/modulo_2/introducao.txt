@@ -12,6 +12,6 @@ Quando se começa com ela menor e tem a opção de aumentar a memória ou cpu de
 
 Você controla a configuração de rede da Amazon EC2.
 
-Facilidade em provicionar instancias ecs.
+Facilidade em provicionar instancias ec2.
 
 Poder computacional como serviço (CaaS)

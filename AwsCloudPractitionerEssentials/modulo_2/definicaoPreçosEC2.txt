@@ -1,0 +1,15 @@
+Opções de compra do Amazon EC2.
+
+Sob demanda ---> É pago somente na execução da instancia pode ser por segundos ou hora, geralmente para testes.
+
+Savings Plans --> Oferece preços baixos em troca de compromisso com  quantidade consistente de uso medido em dolares por hora periodo de 1 a 3 anos.
+Oferece economia de 72%.
+
+Instancias reservadas --> São adequadas a carga de trabalho estacionaria ou previsivel e são um desconto de cobrança aplicado
+ao uso de instâncias sob demanda em sua conta, são reservadas no periodo de 1 a 3 anos.
+
+Instancias spot --> São ideais para cargos de trabalho com horario de inicio e termino flexiveis ou que tolerem interrupções.
+As instancias spot usam capacidade de computação não utilizada do Amazon EC2 e tem economia de até 90% de desconto em relação
+aos preçõs das instancias sob demanda.
+
+Hosts dedicados --> São servidores fisicos com capacidade de instancia do Amazon EC2 totalmente dedicado ao cliente.
