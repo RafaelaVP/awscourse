@@ -5,10 +5,9 @@
   <!-- <a href="https://awscourse.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">In this account I am creating summaries referring to amazon's aws fr course.</h1>
+<h1 align="center">Summary of AWS Amazon courses!</h1>
 
 <p align="center">
-
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/RafaelaVP/awscourse?color=56BEB8">
 
@@ -43,11 +42,11 @@
 
 ## :dart: About
 
-Summary of AWS Amazon courses!
+In this account I am creating summaries referring to amazon's aws fr course.
 
 ## :sparkles: Features
 
-Aws Cloud Practiotioner Essentials
+Aws Cloud Practitioner Essentials
 
 Module 1 ->
 
