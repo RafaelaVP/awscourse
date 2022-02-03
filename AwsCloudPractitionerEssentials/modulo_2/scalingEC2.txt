@@ -1,0 +1,9 @@
+AutoSlcaling
+
+O Amazon EC2 Auto Scaling permite que você adicione ou remova automaticamente instâncias do Amazon EC2 em resposta à alteração da demanda do aplicativo. 
+Ao fazer auto scaling de suas instâncias, aumentando ou reduzindo conforme a necessidade, você consegue manter uma sensação maior de disponibilidade de aplicativos.
+
+No Amazon EC2 Auto Scaling, há duas abordagens disponíveis: scaling dinâmico e scaling preditivo.
+
+O scaling dinâmico responde às alterações na demanda. 
+O scaling preditivo programa automaticamente o número correto de instância do Amazon EC2 com base na demanda prevista.
