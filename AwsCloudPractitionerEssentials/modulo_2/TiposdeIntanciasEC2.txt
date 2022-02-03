@@ -11,10 +11,10 @@ Pode ser usado também para servidores web, de aplicativos de jogos no entanto s
 intensiva e servidores de jogos dedicados, também pode ser usado para cargas de trabalho de processamento em lote e processamento de muitas transações em um único grupo.
 
 
-Instancias otimizadas para memoria ---> são projetadas para fornecer desempenho rápido para cargas de trabalho que processam grndes conjuntos de dados de memoria.
+Instancias otimizadas para memoria ---> são projetadas para fornecer desempenho rápido para cargas de trabalho que processam grandes conjuntos de dados de memoria.
 
 Instancias de computação acelerada --> utilizam aceleradores de harware ou coprocessadores para executar algumas funções de forma mais eficiente do que é possivel 
-em um software executado em CPUS. exepmlos: funções de calculos de numeros com ponto flutuante, processamento de gráficos e correspondência de padrôes de dados.
+em um software executado em CPUS. exepmlos: funções de calculos de numeros com ponto flutuante, processamento de gráficos e correspondência de padrões de dados.
 São ideias para aplicativos gráficos e streaming de jogos de aplicativos.
 
 Instancias otimizadas para armazanamento --> são projetadas para cargas de trabalho que exigem alto acesso sequencial de leitura e gravação e grandes conjuntos de dados
