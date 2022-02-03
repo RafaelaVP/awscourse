@@ -51,3 +51,23 @@ Implatação Híbrida
 
 Em uma implantação Hibrida, os recursos baseados na nuvem ficam conectados à infraestrutura local.
 
+Benefícios da computação em nuvem.
+
+Trocar despesas iniciais por despesas variaveis ou seja na variavel você paga apenas pelos recursos de computação que consumir, o que economiza custos e se pode investir
+mais m soluções inovadoras.
+
+Custos para manter datacenters.
+A computação em data centers exige mais custo para manter a infraestrutura, com a computação em nuvem não terá este custo, além de poder
+se concentrar mais em seus aplicativos e clientes.
+
+Outro beneficio é não precisar tenta adivinhar a capacidade de infraestrutra para implantar um aplicativo, se você utilizar as instancias do EC2 você paga apenas pelo tepo que utilizar os recursos.
+
+Economia de escala.
+
+Aumento de velocidade e agilidade.
+
+Ter alcance global com a nuvem AWS você pode implantar aplicativos para clientes do mundo todo rapidamente, com baixa latência.
+
+Auto scaling é o serviço da AWS que realiza o ajuste automático do provisionamento da infraestrutura em função da demanda de tráfego.
+Com ele é possível adicionar a capacidade de computação necessária para processar determinada carga no aplicativo e, em seguida, remover quando
+não for mais necessária; tudo de forma automática. Isso ajuda a otimizar o desempenho dos aplicativos e reduzir custos de infraestrutura.
