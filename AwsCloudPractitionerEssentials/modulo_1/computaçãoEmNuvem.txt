@@ -1,0 +1,53 @@
+Introdução
+
+Modelo cliente servidor.
+
+cliente <----> servidor
+
+cliente faz uma requisição ao servidor um pedido uma solicitação, o servidor irá validar para retornar a res
+posta.
+
+servidor
+*Amazon Elastic Compute Cloud(Amazon EC2) --> servidor virtual
+
+*Importante na AWS você paga pelo que utiliza.
+
+Computação em Nuvem
+
+Recursos de TI
+
+Tarefas genericas e pesadas de TI.
+
+AWS fica respnsável por essas tarefas.
+
+Modelos de implantação da computação em nuvem.
+
+Ao selecionar uma estratégia de nuvem, a empresa deve considerar fatores como componentes de aplicativos de nuvem necessários, ferramentas de gerenciamento de recursos,
+preferenciais e requisitos de infraestrutura de TI legada.
+
+Os três modelos de implantação de computação em nuvem são computação baseada na nuvem, local e hibrida.
+
+*Implantação baseada na nuvem.
+
+Execute todas as partes do aplicativo na nuvem;
+Migre aplicativos existentes para a nuvem;
+Projete e crie novos aplicativos na nuvem.
+
+Em um modelo de implantação baseada na nuvem, você pode migrar aplicativos existentes para a nuvem ou projetar e criar novos aplicativos na nuvem. 
+você pode criar esses aplicativos em uma infraestrutura de baixo nível que precise do gerenciamento de sua equipe de TI. Como alternativa, você pode criá-los usando serviços de nível superior que reduzem os requisitos de gerenciamento, arquitetura e scaling da infraestrutura principal.
+Por exemplo, uma empresa poderia criar um aplicativo que consiste em servidores virtuais, bancos de dados e componentes de redes totalmente baseados na nuvem.
+
+Implantação local
+
+*Implante recursos usando ferramentas de virtualização e gerenciamento de recursos.
+*Aumente a utilização de recursos usando tecnologia de virtualização e gerencimento de aplicativos.
+
+A implantação local também é conhecida como uma implantação em nuvem privada. Nesse modelo, os recursos são implantados no local, usando ferramentas
+de virtualização e gerencimento de recursos.
+
+Implatação Híbrida
+*conecte recursos baseados na nuvem à infraestrutura local.
+*Integre recursos baseados na nuvem com aplicativos de TI legados.
+
+Em uma implantação Hibrida, os recursos baseados na nuvem ficam conectados à infraestrutura local.
+
