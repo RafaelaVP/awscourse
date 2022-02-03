@@ -1,0 +1,68 @@
+Computação Serverless
+--> Você não pode ver ou acessar a infraestrutura subjacente.
+
+AWS Lambda--> é uma opção de computação serverless é um serviço permite que faça um upload do código na função do lambda e configure
+um trigger um evento que vai iniciar a execução da função do lambda e o serviço vai aguardar o trigger e quando detectado o código é 
+executado e gerenciado.
+
+Execução do código é de 15 minutos, é adequado para procesamento rápidos, backend do servidor wed, ou serviço de processamento de relatório de sistema.
+
+Amazon Elastic Container service(ECS) --> Projetado para ajudar na execução em containers em escala.
+
+Amazon Elastic Kubernetes service(EKS) --> Funciona de maneira semelhante ao ECS porém com outras tecnologias.
+
+Ferramentas de orquestração de container.
+
+Container é do docker.
+
+AWS fargate --> é uma plataforma de poder computacional serverless para ECS ou EKS.
+
+
+AC2 --> Hospedar aplicações tradicionais e acesso total ao sistema operacional.
+
+Lambda --> Pocessamento de curta duração, orientado a eventos, serviços e aplicações, não deseja gerenciar o ambiente.
+
+
+Executar workloads baseado em containers --> Necessário escolher a ferramenta de orquestração ECS ou EKS.
+Após definiar a plataforma EC2 que você gerencia ou fargate que é gerenciado para você.
+
+
+AWS Lambda
+
+O AWS Lambda é um serviço que permite a execução de códigos sem a necessidade de provisionar ou gerenciar servidores.
+
+Ao usar o AWS Lambda, você paga apenas pelo tempo de computação que consumir. 
+As cobranças se aplicam ao tempo em que o código fica em execução. Você pode executar códigos para praticamente qualquer tipo de aplicativo ou serviço de back-end sem a necessidade de qualquer gerenciamento.
+
+Contêineres
+
+Os contêineres são uma maneira comum de empacotar códigos, configurações e dependências do aplicativo em um único objeto. 
+Você também pode usar contêineres para processos e fluxos de trabalho nos quais há requisitos essenciais de segurança, confiabilidade e escalabilidade.
+
+Amazon Elastic Container Service (Amazon ECS)
+
+O Amazon Elastic Container Service (Amazon ECS) é um sistema de gerenciamento de contêineres altamente dimensionável 
+e de alto desempenho que permite executar e dimensionar aplicativos em contêineres na AWS.
+
+O Amazon ECS é compatível com contêineres Docker. 
+O Docker é uma plataforma de software que permite criar, testar e implantar aplicativos rapidamente. 
+A AWS é compatível com c Docker Community Edition de código aberto e do Docker Enterprise Edition baseado em assinatura. Com o Amazon ECS, 
+você pode usar chamadas de API para iniciar e interromper aplicativos ativados pelo Docker.
+
+Amazon Elastic Kubernetes Service (Amazon EKS)
+
+O Amazon Elastic Kubernetes Service (Amazon EKS) é um serviço totalmente gerenciado que você pode usar para executar o Kubernetes na AWS.
+
+O Kubernetes é um software de código aberto que permite implantar e gerenciar aplicativos em contêineres em grande escala. 
+Uma grande comunidade de voluntários mantém o Kubernetes, e a AWS trabalha ativamente em conjunto com essa comunidade Kubernetes. 
+Conforme novos recursos e funcionalidades são lançados para aplicativos Kubernetes, você pode facilmente aplicar
+ essas atualizações aos aplicativos gerenciados pelo Amazon EKS.
+
+AWS Fargate
+
+O AWS Fargate é um mecanismo de computação sem servidor para contêineres.
+ Ele funciona com o Amazon ECS e o Amazon EKS.
+
+Com o AWS Fargate, você não precisa provisionar ou gerenciar servidores. 
+O AWS Fargate gerencia sua infraestrutura de servidor para você. Você pode se concentrar em inovar e desenvolver seus aplicativos, 
+pagando apenas pelos recursos necessários para executar os contêineres.
