@@ -59,7 +59,7 @@ Module 3 ->
 
 ## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com)
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
 
 ## :checkered_flag: Access to the course summary.
 
@@ -70,9 +70,11 @@ $ git clone https://github.com/RafaelaVP/awscourse.git
 # Access
 $ cd awscourse
 
+
 Improvements
 
 Courses in progress...
+
 
 Made with :heart: by <a href="https://github.com/RafaelaVP" target="_blank">{{Rafaela Valerio}}</a>
 
