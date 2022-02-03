@@ -1,0 +1,4 @@
+Infraestrutura global.
+
+Alta disponibilidade e tolerância a falhas.
+
