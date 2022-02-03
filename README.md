@@ -48,11 +48,11 @@ In this account I am creating summaries referring to amazon's aws fr course.
 
 Aws Cloud Practitioner Essentials
 
-Module 1 ->
+Module 1 -> :books:
 
-Module 2 ->
+Module 2 -> :books:
 
-Module 3 ->
+Module 3 -> :books:
 
 ## :white_check_mark: Requirements
 
