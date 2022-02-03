@@ -1,0 +1,22 @@
+Balanceamento de carga --> é uma aplicação que recebe requisições e faz o encaminhamento para processamento
+nas respectivas instancias.
+
+Distribuição de trafego
+
+Alta performance;
+Econômico;
+Altamente disponivel;
+Escálavel automaticamente
+
+Elastic load balancing --> Serviço gerenciavel, contruido para resolver problema de grandes cargas de trabalho, o mesmo tem escopo regional.
+única url direciona trafego para o backend.
+
+O Elastic Load Balancing é o serviço AWS que distribui automaticamente o tráfego de entrada de aplicativos entre vários recursos, como instâncias do Amazon EC2.
+
+Um balanceador de carga atua como um ponto único de contato para todo o tráfego da web de entrada no seu grupo do Auto Scaling. Isso significa que, 
+à medida que você adiciona ou remove instâncias do Amazon EC2 em resposta à quantidade de tráfego de entrada, essas solicitações são direcionadas para o balanceador de carga 
+primeiro. Em seguida, as solicitações se espalham por vários recursos que lidarão com elas. Por exemplo, se você tiver várias instâncias do Amazon EC2, 
+o Elastic Load Balancing distribuirá a carga de trabalho entre elas para que nenhuma instância tenha que carregar a maior parte.
+
+Embora o Elastic Load Balancing e o Amazon EC2 Auto Scaling sejam serviços separados, 
+eles trabalham juntos para que os aplicativos executados no Amazon EC2 possam fornecer alto desempenho e disponibilidade.
