@@ -8,9 +8,7 @@
 <h1 align="center">In this account I am creating summaries referring to amazon's aws fr course.</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/RafaelaVP/awscourse?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/aws?color=56BEB8">
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/RafaelaVP/awscourse?color=56BEB8">
 
