@@ -1,0 +1,22 @@
+Tipos de instâncias do Amazon EC2
+
+Instancias de uso geral --> Equilibram os recursos de computação, rede e memória.
+
+Pode ser utilizada em servidores de aplicativos, servidores de jogos, servidores de back-end para aplicativos
+empresariais, banco de dados pequenos e médios.
+
+
+Instancias otimizadas para computação ---> são ideiais para aplicativos vinculados à computação, que se beneficiam de processadores de alto desempenho.
+Pode ser usado também para servidores web, de aplicativos de jogos no entanto são ideiais para servidores web de alto desempenho, servidores de aplicativos de computação
+intensiva e servidores de jogos dedicados, também pode ser usado para cargas de trabalho de processamento em lote e processamento de muitas transações em um único grupo.
+
+
+Instancias otimizadas para memoria ---> são projetadas para fornecer desempenho rápido para cargas de trabalho que processam grndes conjuntos de dados de memoria.
+
+Instancias de computação acelerada --> utilizam aceleradores de harware ou coprocessadores para executar algumas funções de forma mais eficiente do que é possivel 
+em um software executado em CPUS. exepmlos: funções de calculos de numeros com ponto flutuante, processamento de gráficos e correspondência de padrôes de dados.
+São ideias para aplicativos gráficos e streaming de jogos de aplicativos.
+
+Instancias otimizadas para armazanamento --> são projetadas para cargas de trabalho que exigem alto acesso sequencial de leitura e gravação e grandes conjuntos de dados
+de armazenamento local. Exemplos de utilização: sistemas de arquivos distribuidos, aplicativos data warehouse e sistemas de processamento de transações online de alta
+frequencia(OLTP).
