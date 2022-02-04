@@ -1,0 +1,15 @@
+Amazon Virtual private Cloud(VPC)
+Permite provissionar uma sessão logicamente isolada da nuvem aws para executar recursos em uma rede virtual definida por você pode ser para público ou privado.
+
+
+Sub-rede pública --> para utilização de clientes.
+
+Sub-rede privada --> para utilizar entre funcionários, intranet.
+
+
+
+VPC é um serviço para criar a propria rede privada na aws, permite definir intervalo de IPs.
+
+Sub-rede --> são usada para separar os ips privados e públicos.
+
+Internet gateway 
