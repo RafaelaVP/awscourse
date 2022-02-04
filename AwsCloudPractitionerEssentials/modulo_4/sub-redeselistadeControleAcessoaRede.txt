@@ -1,0 +1,18 @@
+A Aws possui proteção de rede, segurança de aplicações, identidade de usuário, autorização e autenticação,
+proteção contra ataques de negação de serviço distribuido, integridade dos dados, criptografia.
+
+
+Proteção de rede
+
+Subnet controle de acesso ao gateway, os pacotes ao cruzar o limite da subnet são verificados pelo recurso chamado lista de controle de acesso a rede.
+
+
+As subnets pode ter mais de uma instancia ec2 e devido a isso pode ocorrer de ter regras diferentes neste cado cada instancia posssui um gurpo de segurança 
+que verifica os pacotes e não permite a entrada, para permitir algum fluxo é necessário modificar o grupo de segurança.
+
+
+Grupo de segurança X Network ACL 
+ O grupo de segurança possui stateful ou seja ele tem uma memoria quando se trata de permitir entrada e saída.
+ E a Network ACL statless não se lembra de dada e verifica todos os pacotes.
+
+
