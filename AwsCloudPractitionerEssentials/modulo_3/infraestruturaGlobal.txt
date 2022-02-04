@@ -1,0 +1,31 @@
+Regiões --> AWS para serem mais proxima do fluxo de negocio, vários datacenter, cada região pode ser conectada por meio de rede de fibra
+óptica de alta velocidade.
+
+Cada região é isolada, só saira algum dado se for autorizado, possui alta segurança.
+
+Qual região deve escolher?
+
+Tem quadro pontos chaves para escolher uma região.
+
+1- Requisitos de conformidade,
+2- Proximidade da base de clientes, devido a latência pois leva tempo para os dados serem enviados e recebidos,
+3- Disponibilidade dos serviçoes, a aws está sempre inovando,
+4- Definição de preço.
+
+
+Cada região tem uma tabela de preços.
+
+Selecionada região porém tem clientes em todos os locais, é utilizado uma cópia de dados locais em cache, é utilizado o conceito
+de redes de entrega de conteúdo CDN,  a CDN da amazon se chama Amazon cloudFront.
+CLOUDFront --> É um serviço que ajuda a fornecer dados vídeos , aplicações e apis com baixa latência e alta velocidade de transferencia,
+utiliza o que é chamado de edge locations, pontos de presença espalhados pelo mundo para acelerar a comunicação e a entrega de conteúdo,
+elas executam o serviço de DNS chamado Amazon Route 53 ajuda os clientes a direcionar as requisições corretamente para os servidores web
+com baixa latência e confiabilidade.
+
+AWS Outposts --> Onde a aws basicamente vai instalar e configurar uma mini região, totalmente operacional direto do seu datacenter.
+
+Pontos chaves
+
+*Regiões são áreas geograficamente isoladas
+*Regiões contém zona de disponibilidade.
+*Edge locations executam o amazoncloudfront.
