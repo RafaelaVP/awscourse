@@ -1,0 +1,29 @@
+API --> Interface de programação de aplicação.
+
+Interagindo com serviços AWS
+
+-> Console de gerenciamento AWS 
+Ambiente de teste,
+visualizar contas AWS,
+Checar monitoramento,
+Ediversas outras tarefas.
+-> Interface de linha de comando CLI.
+Faça chamadas de API usando o terminal na sua máquina.
+-> Aws software Development Kits(SDks) utilizando diversas linguagens.
+Permite que você interaja com os recursos da AWS por meio de várias linguagens de programação.
+
+Provisionar recurso.
+Faça o login no console de gerenciamento, escreva comandos ou escreva aplicações.
+
+AWS Elastic Beanstalk
+É um serviço ajuda provisionar ambientes baseados no ec2.
+Você apenas precisa fornecer o código da aplicação e configurações desejadas e em seguida é criado o ambiente e feito o deploy.
+Te ajuda a focar na aplicação e não na infraestrutura.
+
+AWS cloudFormation
+É uma ferramenta que trata infraestrutura como código para definir uma ampla variedade de recursos AWS.
+Templates di cloudFormation em json e yaml.
+
+Compativel também com armazenamento, banco de dados, analytics, machine learning.
+
+Gerencia todas as chamadas de api do backend da aws para você, o template pode ser utilizado em várias regiões, criando ambientes identificos.
