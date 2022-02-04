@@ -1,0 +1,15 @@
+ Amazon route 53  --> DNS serviço de tradução,  traduz nomes de site para endereços Ips.
+
+Politicas de roteamento
+ Roteamento baseado em latância,
+ DNS de geolocalização,
+ Rotas de geoproximidade,
+ Weighted round robin.
+
+
+Content Delivery Network(CDN) -> Uma rede que fonrnece conteúdo de borda para os usuários com base na localização geográfica.
+ 
+ 
+ Amazon cloudFront
+
+
