@@ -56,6 +56,8 @@ Module 3 -> :books: Global infrastructure and provisioning of AWS resources.
 
 Module 4 -> :books: NetWorking
 
+Module 5 -> :books: Database storage
+
 ## :white_check_mark: Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
