@@ -54,7 +54,7 @@ Module 2 -> :books: EC2 pricing, elastic load balancing, scaling, additional ser
 
 Module 3 -> :books: Global infrastructure and provisioning of AWS resources.
 
-Module 4 -> :books:
+Module 4 -> :books: NetWorking
 
 ## :white_check_mark: Requirements
 
