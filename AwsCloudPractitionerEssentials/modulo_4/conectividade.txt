@@ -12,4 +12,27 @@ VPC é um serviço para criar a propria rede privada na aws, permite definir int
 
 Sub-rede --> são usada para separar os ips privados e públicos.
 
-Internet gateway 
+Internet gateway -> É como se fosse uma porta aberta para o pública.
+Conexão vpn tem que associar um virtual private gateway
+
+gateway privado - virtual private gateway
+
+AWS direct connect -> permite estabelecer uma conexão utilizando fibra dedicada completamente privada entre o datacenter e a aws.
+
+
+Um gateway da internet é uma conexão entre uma VPC e a internet. 
+Você pode pensar em um gateway da internet como sendo semelhante a uma porta que os clientes usam para entrar na cafeteria.
+ Sem um gateway da internet, ninguém pode acessar os recursos em sua VPC.
+
+ O gateway privado virtual é o componente que permite que o tráfego protegido da internet ingresse na VPC. 
+ Mesmo que sua conexão com a cafeteria tenha proteção extra, os engarrafamentos são possíveis porque você usa o mesmo caminho que outros clientes.
+ Um gateway privado virtual permite estabelecer uma conexão VPN (rede virtual privada) entre a VPC e uma rede privada, 
+ como um data center local ou uma rede corporativa interna. Um gateway privado virtual permitirá o tráfego na VPC somente se ele for proveniente de uma rede aprovada.
+
+ AWS Direct Connect é um serviço que permite estabelecer uma conexão privada dedicada entre seu data center e uma VPC.
+Suponha que haja um prédio com um corredor que liga o prédio diretamente à cafeteria. Somente os moradores do prédio podem passar por esse corredor.
+
+Esse corredor privado fornece o mesmo tipo de conexão dedicada que o AWS Direct Connect. 
+Os moradores conseguem entrar na cafeteria sem precisarem usar a estrada pública compartilhada com outros clientes.
+A conexão privada que o AWS Direct Connect fornece ajuda você a reduzir os custos de rede e a aumentar a quantidade de largura de banda que pode trafegar pela sua rede.
+
