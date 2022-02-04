@@ -1,0 +1,5 @@
+Amazon Redshift
+
+O Amazon Redshift é serviço de data warehouse que você 
+pode usar para análise de big data. Ele oferece a capacidade de coletar dados de muitas fontes 
+além de ajudar a entender relações e tendências em todos os seus dados.

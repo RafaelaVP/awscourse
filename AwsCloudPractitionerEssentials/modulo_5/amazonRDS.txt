@@ -1,0 +1,26 @@
+Sistema de gerenciamento de banco de dados relacional(RDBMS)
+
+Banco de dados suportados pela AWS
+Mysql
+PostgreSQL
+Oracle
+Microsoft SQL server
+
+Migração de banco de dados-> migração lift-and-shift
+
+Amazon relacional Database service(RDS)
+Patches automatizados
+Backups
+Redundância
+Failover
+Recuperação de desastres
+
+
+Amazon aurora opção de banco de dados gerenciado, vem em duas formas Mysql e Postgresql.
+
+1/10 do custo de bases de dados comerciais
+
+Dados replicados entre instalações
+
+Até 15 réplicas de leitura.
+Backups contínuos para S3

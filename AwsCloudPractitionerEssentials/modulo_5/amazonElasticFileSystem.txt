@@ -1,0 +1,24 @@
+Amazon Elastic File System(EFS)
+Sistema de arquivo compartilhado e gerenciado.
+Permite que tenha várias instâncias acessando os dados que estão armazenados no EFS ao mesmo tempo.
+
+
+Diferença entre EBS e EFS
+
+Os volumes são assossiados as instâncias EC2,
+Recurso alocado na Zona de disponibilidade.
+
+Para associar a instacia ec2 ao Ebs é preciso estar na mesma zona de disponibilidade para anexar instancias EC2.
+
+Volumes não escalam automaticamente.
+------------------------------------------------------------------------------------------------------------------
+
+Amazon EFS
+
+Múltiplas instancias lendo e escrevendo simultaneamente.
+
+Sistema de arquivos para linux
+
+Recurso regional 
+
+Escala automaticamente.

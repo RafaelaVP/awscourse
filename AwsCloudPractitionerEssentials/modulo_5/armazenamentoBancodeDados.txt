@@ -1,0 +1,41 @@
+Banco de dados e armazenamento
+
+Armazenamento de instâncias e Amazon Elastic Block Store (Amazon EBS)
+
+
+--> Armazenamento de blocos 
+Local para armazenar arquivos 
+
+Se salvar dados no AWS host pode ser apagados após executar um terminate pois na hora de dar start a instancia vai para outro host devido a isso se usa o EBS
+para salvar os dados importantes.
+
+EBS cria discos virtuais que são chamados de volumes do EBS pode ser anexado as instancias do EC2.
+
+Você defini tamanho, tipo e configurações e após associa ao EC2 e após grava.
+
+Snapshots: Backups incrementais
+
+
+Amazon simple storage Service S3
+
+Pode armazenar e recuperar uma quantidade ilimitada de dados.
+Os dados são armazenados como objetos,
+Guarde onjetos em buckets,
+Upload de objeto com tamanho máximo de 5TB,
+Versões de objetos,
+crie múltplos buckets.
+Pode ser usado para hospedagem de sites estáticos Amazon S3.
+
+Comparação entre o Amazon EBS e o Amazon S3
+
+Elastic Block Store
+* Tamanhos até 16 TIb,
+*Sobreviver ao descarte de sua instância EC2,
+*SSD por padrão,
+*Opções HDD
+
+Amazon simple storage Service S3
+*Armazenamento ilimitado,
+*Objetos individuais até 5000 GBs, 5TBS,
+*Escreva uma vez/ leia várias,
+*99.9999999% de durabilidade

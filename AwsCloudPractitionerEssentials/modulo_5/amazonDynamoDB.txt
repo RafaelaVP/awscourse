@@ -1,0 +1,31 @@
+Amazon DynamoDB: Um banco de dados severless.
+Em um banco de dados não relacional, você cria tabelas. Uma tabela é um lugar onde você pode armazenar e consultar dados.
+
+Bancos de dados não relacionais são às vezes referidos como “bancos de dados NoSQL” porque usam estruturas diferentes de linhas e colunas para organizar dados.
+ Um tipo de abordagem estrutural para bancos de dados não relacionais é o uso de pares de chave-valor. Com pares de chave-valor, os dados são organizados em itens (chaves) 
+ e cada item tem um atributo (valores). Pode-se pensar em atributos como sendo diferentes características de seus dados.
+
+Em um banco de dados de chave-valor, você pode adicionar ou remover atributos de itens na tabela a qualquer momento. 
+Além disso, nem todos os itens na tabela precisam ter os mesmos atributos. 
+
+Tem schema flexivel.
+
+Proposito especifico
+
+Tempo de resposta de milisegundos
+
+Totalmente gerenciado
+
+Altamente escalável.
+
+Amazon RDS --> Relacional
+Alta disponibilidade automática recuperação fornecida,
+Cliente é proprietário dos dados,
+Cliente pe proprietario do schema,
+cliente controla a rede.
+
+Amazon DynamoDB
+Chave-valor
+Capacidade de produção massiva
+Potencial de tamanhO de PB
+Acesso a API granular
