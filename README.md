@@ -48,11 +48,13 @@ In this account I am creating summaries referring to amazon's aws fr course.
 
 Aws Cloud Practitioner Essentials
 
-Module 1 -> :books:
+Module 1 -> :books: Cloud computing concepts.
 
-Module 2 -> :books:
+Module 2 -> :books: EC2 pricing, elastic load balancing, scaling, additional service, messaging, queuing, and EC2 instance types.
 
-Module 3 -> :books:
+Module 3 -> :books: Global infrastructure and provisioning of AWS resources.
+
+Module 4 -> :books:
 
 ## :white_check_mark: Requirements
 
