@@ -1,0 +1,31 @@
+Ataques de negação de serviço
+
+Um ataque de negação de serviço (DoS) é uma tentativa deliberada de tornar um site ou aplicativo indisponível para os usuários.
+Por exemplo, um invasor pode inundar um site ou aplicativo com tráfego excessivo de rede até que o site ou o aplicativo de destino 
+se sobrecarregue e não seja mais capaz de responder. 
+Se o site ou aplicativo ficar indisponível, o serviço será negado aos usuários tentando fazer solicitações legítimas.
+
+Ataques distribuídos de negação de serviço
+
+Agora, suponha que a pessoa passando o trote tenha recrutado a ajuda de amigos. 
+
+Essa pessoa e seus amigos telefonam repetidamente para a cafeteria para fazer pedidos, mesmo que não pretendam retirá-los. 
+Esses pedidos são provenientes de números de telefone diferentes e é impossível que a cafeteria bloqueie todos eles. 
+Além disso, o influxo de chamadas dificultou cada vez mais o atendimento aos clientes. Isso se parece com um ataque distribuído de negação de serviço.
+
+AWS Shield
+
+O AWS Shield é um serviço que protege aplicativos contra ataques DDoS. O AWS Shield oferece dois níveis de proteção: Standard e Advanced.
+
+O AWS Shield Standard protege automaticamente todos os clientes AWS sem nenhum custo. Ele protege seus recursos AWS contra os tipos de ataques DDoS mais comuns e frequentes.
+
+À medida que o tráfego de rede ingressa em seus aplicativos, o AWS Shield Standard usa diversas técnicas de análise para detectar tráfego mal-intencionado em tempo real
+ e mitigá-lo automaticamente.
+
+ AWS Shield Advanced
+–
+O AWS Shield Advanced é um serviço pago que fornece diagnósticos detalhados de ataques e a 
+capacidade de detectar e mitigar ataques elaborados de DDoS.
+
+Ele também se integra a outros serviços, como o Amazon CloudFront, o Amazon Route 53 e o Elastic Load Balancing. 
+Além disso, você pode integrar o AWS Shield ao AWS WAF escrevendo regras personalizadas para mitigar ataques complexos de DDoS.

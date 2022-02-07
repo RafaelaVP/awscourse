@@ -1,0 +1,17 @@
+O AWS Artifact é sua primeira opção de recurso para informações relacionadas à conformidade que importam para você.
+ Ele oferece acesso sob demanda aos relatórios de segurança e conformidade da AWS e a acordos online específicos. 
+ Entre os relatórios disponíveis no AWS Artifact, estão o Service Organization Control (SOC – Controle de organização de serviço) 
+ e o Payment Card Industry (PCI – Setor de cartões de pagamento), bem como certificações de órgãos de credenciamento de diversas áreas geográficas 
+ e setores de conformidade que validam a eficácia da implementação e operação dos controles de segurança da AWS. Os acordos disponíveis no AWS Artifact 
+ incluem o Business Associate Addendum (BAA – Adendo de associado comercial) e o Nondisclosure Agreement (NDA – Acordo de confidencialidade).
+
+ Centro de conformidade para clientes
+
+ A capacitação dos clientes é uma parte essencial do DNA da AWS. O centro de conformidade para clientes prioriza a segurança e a conformidade 
+ de nossos clientes na AWS. Aprenda com as experiências dos outros clientes e descubra como seus colegas resolveram os difíceis desafios de conformidade, 
+ governança e auditoria existentes no ambiente normativo atual.
+
+Além disso, é possível acessar o nosso primeiro programa de treinamento para auditores de nuvem do setor.
+ Os recursos de aprendizado da universidade online são programas de treinamento lógico criados especificamente 
+ para profissionais de segurança, conformidade e auditoria. Esses recursos permitem criar as habilitações de 
+ TI necessárias para que seu ambiente evolua para a próxima geração de auditoria e garantia da qualidade.

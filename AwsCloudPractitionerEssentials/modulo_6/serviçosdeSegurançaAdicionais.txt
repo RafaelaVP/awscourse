@@ -1,0 +1,34 @@
+AWS Key Management Service (AWS KMS)
+O AWS Key Management Service (KMS) facilita a criação e o gerenciamento de chaves criptográficas e o controle do seu uso em uma ampla variedade de serviços da AWS e em seus aplicativos. O AWS KMS é um serviço seguro e resiliente que usa módulos de segurança de hardware validados ou em processo de validação pelo FIPS 140-2 para proteger suas chaves. 
+O AWS KMS é integrado ao AWS CloudTrail para fornecer logs contendo toda a utilização das chaves para ajudar a cumprir requisitos normativos e de compatibilidade.
+
+AWS WAF – Web Application Firewall
+O AWS WAF é um firewall de aplicações Web que ajuda a proteger suas aplicações Web ou APIs contra bots e exploits 
+comuns na Web que podem afetar a disponibilidade, comprometer a segurança ou consumir recursos em excesso. O AWS WAF oferece controle sobre 
+como o tráfego atinge suas aplicações, permitindo que você crie regras de segurança que 
+controlam o tráfego de bots e bloqueiam padrões de ataque comuns, como injeção de SQL ou cross-site scripting. 
+Você também pode personalizar regras que filtram padrões de tráfego específicos. Você pode começar rapidamente usando regras gerenciadas para o AWS WAF,
+ um conjunto pré-configurado de regras gerenciadas pela AWS ou por vendedores do AWS Marketplace para resolver problemas como os dez principais 
+ riscos de segurança e bots automatizados do OWASP que consomem recursos em excesso, distorcem métricas ou podem causar um tempo de inatividade. 
+ Essas regras são atualizadas regularmente conforme surgem novos problemas. O AWS WAF inclui uma API multifuncional que você pode usar para automatizar a criação, 
+ a implantação e a manutenção de regras de segurança.
+
+Você pode implantar o AWS WAF no Amazon CloudFront como parte de uma solução de CDN,
+ no Application Load Balancer que faz frente aos servidores Web ou de origem executados no EC2, 
+ no Amazon API Gateway para suas APIs REST ou no AWS AppSync para suas APIs GraphQL. Com o AWS WAF, 
+ você paga apenas pelo que usar e o preço é baseado em quantas regras você implanta e quantas solicitações da Web sua aplicação recebe.
+
+ Amazon Inspector
+
+ O Amazon Inspector ajuda a melhorar a segurança e a conformidade dos aplicativos executando avaliações de segurança automatizadas. 
+ Ele verifica os aplicativos quanto a vulnerabilidades de segurança e desvios das práticas recomendadas de segurança, como acesso aberto a instâncias do Amazon EC2 
+ e instalações de versões de software vulneráveis. 
+
+Depois que o Amazon Inspector faz uma avaliação, ele fornece uma lista de descobertas de segurança. A lista prioriza por nível de gravidade, 
+com uma descrição detalhada de cada problema de segurança e uma recomendação sobre como corrigi-lo. Contudo, a AWS não garante que seguir 
+as recomendações feitas resolverá todos os possíveis problemas de segurança. 
+Sob o modelo de responsabilidade compartilhada, os clientes são responsáveis pela segurança de ferramentas, aplicativos e processos executados nos serviços AWS.
+
+Amazon GuardDuty
+O Amazon GuardDuty é um serviço que fornece detecção inteligente de ameaças para sua infraestrutura 
+e seus recursos AWS. Ele identifica ameaças monitorando continuamente a atividade da rede e o comportamento da conta no seu ambiente AWS.
