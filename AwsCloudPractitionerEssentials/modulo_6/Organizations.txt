@@ -1,0 +1,18 @@
+AWS Organizations
+
+Suponha que sua empresa tenha múltiplas contas AWS. Você pode usar o AWS Organizationspara consolidar e gerenciar múltiplas contas AWS em um local central.
+
+Ao criar uma organização, o AWS Organizations cria automaticamente uma raiz, que é o contêiner primário para todas as contas de sua organização. 
+
+No AWS Organizations, você pode controlar de forma centralizada as permissões para as contas em sua organização usando as políticas de controle de serviço (SCPs).
+ As SCPs permitem que você coloque restrições nos serviços AWS, recursos e ações individuais de API que os usuários e funções em cada conta podem acessar.
+
+
+ Unidades organizacionais
+
+No AWS Organizations, você pode agrupar contas em unidades organizacionais (UO) para facilitar o gerenciamento de contas com requisitos de negócios ou segurança semelhantes. 
+Ao aplicar uma política a uma UO, todas as contas na UO herdam automaticamente as permissões especificadas na política.  
+
+Ao organizar contas separadas em UO, você pode isolar mais facilmente cargas de trabalho ou aplicativos com requisitos de segurança específicos. 
+Por exemplo, se sua empresa tiver contas que podem acessar apenas os serviços AWS que atendam a determinados requisitos normativos, você poderá colocar essas contas em uma UO.
+ Em seguida, você pode associar uma política à UO que bloqueia o acesso a todos os outros serviços AWS que não atendam aos requisitos normativos.
