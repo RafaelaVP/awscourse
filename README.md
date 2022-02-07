@@ -58,6 +58,16 @@ Module 4 -> :books: NetWorking
 
 Module 5 -> :books: Database storage
 
+Module 6 -> :books: AWS security summary
+
+Module 7 -> :books: summary Amazon CloudWatch, AWS CloudTrail, and AWS Trusted Advisor
+
+Module 8 -> :books: AWS Cost Planning, Estimating, and Reviewing Tools
+
+Module 9 -> :books: Innovation with AWS Services
+
+Module 10-> :books: The five pillars the AWS well- Architected Framework and Six advantages of cloud computing
+
 ## :white_check_mark: Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
