@@ -11,7 +11,7 @@ Você também pode explorar soluções de software por setor e caso de uso.
 
 Categorias do AWS Marketplace
 
-Image51.png
+
 O AWS Marketplace oferece produtos em várias categorias, como produtos de infraestrutura, aplicativos de negócios, produtos de dados e DevOps.
 
 Em cada categoria, você pode restringir sua pesquisa navegando pelas ofertas de produtos em subcategorias.
