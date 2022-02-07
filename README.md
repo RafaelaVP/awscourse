@@ -68,6 +68,24 @@ Module 9 -> :books: Innovation with AWS Services
 
 Module 10-> :books: The five pillars the AWS well- Architected Framework and Six advantages of cloud computing
 
+Introduction to AWS Identity and Access Management (IAM)
+
+Introduction -> :books: Introduction to IAM.
+
+Technical Essentials
+
+Module 1 -> :books:
+
+Module 2 -> :books:
+
+Module 3 -> :books:
+
+Module 4 -> :books:
+
+Module 5 -> :books:
+
+Module 6 -> :books:
+
 ## :white_check_mark: Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) installed.
