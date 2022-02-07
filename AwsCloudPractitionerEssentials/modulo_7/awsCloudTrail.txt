@@ -1,0 +1,12 @@
+AWS CloudTrail
+
+O AWS CloudTrail registra as chamadas de API realizadas na sua conta. 
+As informações gravadas são identidade do chamador da API, hora da chamada da API,
+ endereço IP de origem do chamador da API e muito mais. Você pode pensar no CloudTrail como uma “trilha” de migalhas de pão (ou um log de ações) que alguém deixou para trás.
+
+Lembre-se de que você pode usar chamadas de API para provisionar, gerenciar e configurar seus recursos AWS. 
+Com o CloudTrail, você pode visualizar um histórico completo de atividades do usuário e chamadas de API de seus aplicativos e recursos. 
+
+Normalmente, os eventos são atualizados no CloudTrail dentro de 15 minutos após uma chamada de API. 
+Você pode filtrar eventos especificando a hora e a data em que uma chamada de API ocorreu, o usuário que solicitou a ação,
+ o tipo de recurso envolvido na chamada de API e muito mais.
