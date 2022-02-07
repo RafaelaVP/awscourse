@@ -1,0 +1,16 @@
+O AWS Identity and Access Management (IAM) Access Analyzer é um novo recurso que simplifica a tarefa das equipes e dos administradores de segurança
+ de garantir que as políticas concedam apenas o acesso planejado aos recursos. As políticas de recursos permitem que os clientes controlem granularmente 
+ quem pode acessar um recurso específico e como pode usá-lo em todo o ambiente da nuvem. Com um clique no console do IAM, os clientes podem permitir que o IAM Access Analyzer em sua conta analise continuamente as permissões concedidas usando políticas associadas aos seus buckets Amazon S3, chaves do AWS KMS, filas do Amazon SQS, funções do AWS IAM e funções do AWS Lambda.
+
+O IAM Access Analyzer monitora continuamente as políticas em busca de alterações, o que significa que 
+os clientes não precisam mais confiar em verificações manuais intermitentes para detectar problemas quando políticas forem 
+adicionadas ou atualizadas. Com o IAM Access Analyzer, os clientes podem abordar proativamente qualquer política de recursos que 
+viole as melhores práticas de segurança e governança em compartilhamento de recursos e proteger os recursos contra acesso não intencional. 
+O IAM Access Analyzer fornece descobertas detalhadas e abrangentes por meio dos consoles AWS IAM, Amazon S3 e AWS Security Hub e também por meio de suas APIs.
+ As descobertas também podem ser exportadas como um relatório para fins de auditoria. As descobertas do IAM Access Analyzer 
+ fornecem respostas definitivas sobre quem tem acesso público e entre contas aos recursos da AWS de fora de uma conta. 
+
+O IAM Access Analyzer usa uma forma de análise matemática chamada raciocínio automatizado, 
+que usa lógica e inferência matemática para determinar todos os caminhos de acesso possíveis permitidos por uma política de recursos. 
+Isso significa que o IAM Access Analyzer pode avaliar centenas ou milhares de políticas 
+no ambiente de um cliente em segundos e fornecer descobertas abrangentes sobre recursos acessíveis fora da conta. O que chamamos de segurança comprovável.

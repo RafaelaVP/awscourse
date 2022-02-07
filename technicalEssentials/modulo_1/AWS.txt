@@ -1,0 +1,40 @@
+A AWS fornece serviços de computação em nuvem. Os recursos de TI mencionados na definição de computação em nuvem são produtos da AWS. 
+Para a aplicação de diretório corporativo deste curso, você usará os produtos da AWS para arquitetar uma infraestrutura escalável, 
+altamente disponível e econômica para hospedar a aplicação de diretório corporativo. 
+Dessa forma, você pode disponibilizar a aplicação rapidamente, sem gerenciar hardware físico pesado.
+
+
+Pagamento conforme o uso
+–
+Em vez de investir em datacenters e hardware antes de saber como você vai usá-los, você paga somente quando usa recursos de computação e apenas pelo quanto você usa.
+
+Beneficiar-se de economia massiva de escala
+–
+O uso da computação em nuvem permite obter um custo inferior ao que você obtém em seu ambiente local. Considerando que o uso de centenas de
+ milhares de clientes é agregado na nuvem, a AWS consegue obter economias maiores de escala, o que resulta em preços mais baixos com pagamento conforme o uso (pay as-you-go).
+
+ Parar de adivinhar a capacidade
+–
+Elimine as suposições ao determinar sua necessidade de capacidade de infraestrutura. 
+Muitas vezes, ao tomar uma decisão sobre a capacidade antes de implantar uma aplicação, 
+você acaba precisando lidar com recursos caros e ociosos ou com capacidade limitada. 
+Com a computação em nuvem, esses problemas são resolvidos. Você pode acessar a quantidade de capacidade que quiser e aumentar e reduzir a escala na vertical,
+ conforme a necessidade em apenas alguns minutos.
+
+Aumentar a velocidade e a agilidade
+–
+Os recursos de TI estão a apenas um clique de distância, o que significa que você reduz o tempo para disponibilizar 
+recursos para seus desenvolvedores de semanas para minutos. Isso resulta em um aumento drástico na agilidade da organização,
+ pois o custo e o tempo necessários para experimentar e desenvolver são significativamente mais baixos.
+
+ Realize economia de custos
+–
+As empresas podem se concentrar em projetos que diferenciam seus negócios em vez de manter datacenters.
+ A computação em nuvem permite que você se concentre em seus clientes, ao invés de no trabalho pesado de estruturar, empilhar e manter a estrutura física.
+ Isso, geralmente, é chamado de trabalho pesado indiferenciado
+
+Obtenha alcance global em minutos
+–
+As aplicações podem ser implantadas em várias regiões ao redor do mundo com alguns cliques. 
+Isso significa que você pode oferecer baixa latência e uma melhor experiência aos seus clientes a um custo mínimo.
+
