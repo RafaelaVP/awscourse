@@ -1,0 +1,10 @@
+Membros da AWS Snow Family
+
+A AWS Snow Family é uma coleção de dispositivos físicos para transporte físico de até exabytes de dados para dentro e para fora da AWS. 
+
+A AWS Snow Family consiste nos serviços AWS Snowcone, AWS Snowball e AWS Snowmobile.
+
+Ilustração dos três membros da AWS Snow Family: AWS Snowcone, AWS Snowball e AWS Snowmobile
+Esses dispositivos oferecem diferentes pontos de capacidade e a maioria inclui recursos de computação integrados. A AWS é a proprietária e responsável 
+pelo gerenciamento da Snow Family, 
+que integra recursos de segurança, monitoramento, gerenciamento de armazenamento e computação da AWS.  

@@ -1,0 +1,30 @@
+Inove com os serviços da AWS
+
+Ao examinar como usar os serviços da AWS, é importante focar nos resultados desejados. Você fica devidamente preparado para impulsionar a inovação na nuvem se conseguir articular claramente as seguintes condições: 
+
+O estado atual
+O estado desejado
+Os problemas que você está tentando resolver
+Considerar alguns dos caminhos que poderá explorar no futuro, enquanto continuar em sua jornada para a nuvem. 
+
+Aplicativos sem servidor
+–
+Com a AWS, sem servidor significa que você não precisa administrar, fazer manutenção ou administrar servidores de aplicativos. Você não precisa se preocupar com tolerância a falhas ou disponibilidade. A AWS lida com esses recursos para você.
+
+O AWS Lambda é um exemplo de um serviço que você pode usar para executar aplicativos sem servidor. Se projetar sua arquitetura para acionar funções do Lambda para executar seu código, você poderá ignorar a necessidade de gerenciar uma frota de servidores.
+
+Criar sua arquitetura com aplicativos sem servidor permite que seus desenvolvedores se concentrem no produto principal em vez de gerenciar e operar servidores.
+
+Aplicativos sem servidor
+–
+Com a AWS, sem servidor significa que você não precisa administrar, fazer manutenção ou administrar servidores de aplicativos. Você não precisa se preocupar com tolerância a falhas ou disponibilidade. A AWS lida com esses recursos para você.
+
+O AWS Lambda é um exemplo de um serviço que você pode usar para executar aplicativos sem servidor. Se projetar sua arquitetura para acionar funções do Lambda para executar seu código, você poderá ignorar a necessidade de gerenciar uma frota de servidores.
+
+Criar sua arquitetura com aplicativos sem servidor permite que seus desenvolvedores se concentrem no produto principal em vez de gerenciar e operar servidores.
+
+Machine Learning
+–
+O desenvolvimento tradicional de machine learning (ML) é complexo, caro, demorado e propenso a erros. A AWS oferece o Amazon SageMaker, que remove o trabalho difícil do processo e ajuda você a criar, treinar e implantar modelos de ML rapidamente.
+
+Você pode usar ML para analisar dados, resolver problemas complexos e prever resultados antes que eles aconteçam.
