@@ -1,0 +1,80 @@
+Como funciona a definição de preço da AWS
+
+A AWS oferece diversos serviços de computação em nuvem com modelos de pagamento conforme o uso. 
+
+Para saber mais, clique no símbolo + ao lado de cada categoria.
+
+Pague somente pelo que usar
+–
+Para cada serviço, você paga exatamente a quantidade de recursos que realmente usa, sem exigir contratos de longo prazo ou licenciamento complexo. 
+
+Pague menos ao fazer reserva
+–
+Alguns serviços oferecem opções de reserva com desconto significativo em comparação com as definições de preços da instância sob demanda.
+
+
+Por exemplo, suponha que sua empresa use instâncias do Amazon EC2 para uma carga de trabalho que precisa ser executada continuamente. 
+Você pode optar por executar essa carga de trabalho no Amazon EC2 Instance Savings Plans, pois o plano permite uma economia de até 72% em 
+relação à capacidade equivalente da instância sob demanda.
+
+Pague menos com descontos baseados em volume, quando usar mais
+–
+Alguns serviços oferecem definição de preço em camadas, portanto, o custo por unidade é incrementalmente menor com o aumento do uso.
+
+
+
+Por exemplo, quanto mais espaço de armazenamento do Amazon S3 você usar, menos pagará por GB.
+
+Calculadora de preços AWS
+
+A calculadora de preços AWS permite explorar os serviços AWS e gerar uma estimativa de custo de seus casos de uso na AWS. 
+Você pode organizar as suas estimativas da AWS por grupos que definir. Um grupo pode refletir como sua empresa está organizada, 
+por exemplo, fornecer estimativas por centro de custo.
+
+Depois de criar uma estimativa, você pode salvá-la e gerar um link para compartilhá-la com outras pessoas.
+
+Suponha que sua empresa esteja interessada em usar o Amazon EC2. No entanto, você ainda não tem certeza de qual Região AWS ou tipo de instância 
+seria o mais econômico para seu caso de uso. Na calculadora de preços AWS, você pode inserir detalhes como o tipo de sistema operacional necessário, 
+requisitos de memória e requisitos de entrada/saída (E/S). 
+Usando a calculadora de preços AWS, você pode revisar uma comparação estimada de diferentes tipos de instância do EC2 nas Regiões AWS.
+
+Exemplos de definição de preços AWS
+
+Esta seção apresenta alguns exemplos de definição de preço dos serviços AWS. 
+
+AWS Lambda
+Para o AWS Lambda, a cobrança é feita com base no número de solicitações das funções e no tempo necessário para serem executadas.
+
+O AWS Lambda permite um milhão de solicitações gratuitas e até 3,2 milhões de segundos de tempo de computação por mês.
+
+
+Você pode economizar nos custos do AWS Lambda inscrevendo-se em um Compute Savings Plan. Um Compute Savings Plan oferece custos de computação
+ mais baixos em troca do compromisso com uma quantidade consistente de uso durante um período de um ou três anos. Este é um exemplo de pagar menos quando há reserva. 
+
+
+Amazon EC2
+
+Com o Amazon EC2, você paga apenas pelo tempo de computação que usar enquanto suas instâncias estão em execução.
+
+Para algumas cargas de trabalho, você pode reduzir significativamente os custos do Amazon EC2 usando instâncias spot. 
+Por exemplo, suponha que você esteja executando um trabalho de processamento em lote que pode ser interrompido.
+ O uso de uma instância spot economizaria até 90% dos custos e, ao mesmo tempo, atenderia aos requisitos de disponibilidade de sua carga de trabalho.
+
+Você pode economizar ainda mais para o Amazon EC2 considerando o Savings Plans e as instâncias reservadas.
+
+Amazon S3
+
+Para definição de preço do Amazon S3, considere os seguintes componentes de custo:
+
+Armazenamento: você paga apenas pelo armazenamento usado. A taxa de armazenamento de objetos em seus buckets do Amazon S3 é cobrada com base nos tamanhos,
+ classes de armazenamento e quanto tempo você armazenou cada objeto durante o mês.
+Solicitações e recuperações de dados: você paga por solicitações feitas aos seus 
+objetos e buckets do Amazon S3. Por exemplo, suponha que você esteja armazenando arquivos de fotos em buckets do Amazon S3 e hospedando-os em um site.
+ Toda vez que um visitante solicita o site que contém esses arquivos de fotos, isso conta para solicitações que você deve pagar.
+Transferência de dados: não há custo para transferir dados entre diferentes buckets do Amazon S3 ou do Amazon S3 para outros serviços dentro da mesma Região AWS.
+ No entanto, você paga pelos dados que transfere para dentro e para fora do Amazon S3, com algumas exceções. 
+ Não há custo para os dados transferidos para o Amazon S3 a partir da internet ou para o Amazon CloudFront. 
+ Também não há custo para os dados transferidos para uma instância do Amazon EC2 na mesma Região AWS que o bucket do Amazon S3.
+Gerenciamento e replicação: você paga pelos recursos de gerenciamento de armazenamento que habilitou nos buckets do Amazon S3 da sua conta. 
+Esses recursos incluem inventário, análise e marcação de objetos do Amazon S3.
+
