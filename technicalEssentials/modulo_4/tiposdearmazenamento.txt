@@ -1,0 +1,29 @@
+Armazenamento de arquivo
+
+Você pode estar familiarizado com o armazenamento de arquivos se tiver interagido com sistemas de armazenamento de arquivos, 
+como o Windows File Explorer ou o Finder no macOS. Os arquivos são organizados em uma hierarquia semelhante a uma árvore que é composta por pastas e subpastas.
+
+
+Casos de uso comuns para armazenamento de arquivos incluem:
+
+Grandes repositórios de conteúdo
+Ambientes de desenvolvimento
+Diretórios iniciais do usuário
+
+Armazenamento de blocos
+
+Enquanto o armazenamento de arquivos trata os arquivos, como uma unidade singular, o armazenamento em blocos divide os arquivos em pedaços 
+de dados de tamanho fixo chamados blocos que têm seus próprios endereços. Como cada bloco é endereçável, os blocos podem ser recuperados de forma eficiente.
+
+Armazenamento de objeto
+
+Objetos, assim como arquivos, são tratados como uma única unidade de dados quando armazenados. No entanto, ao contrário do armazenamento de arquivos, esses objetos são armazenados em uma estrutura plana em vez de uma hierarquia. 
+Cada objeto é um arquivo com um identificador exclusivo. Esse identificador, juntamente com quaisquer metadados adicionais, é empacotado com os dados e armazenado.
+
+Relacionar de volta aos sistemas de armazenamento tradicionais
+
+Se você trabalhou com armazenamento on-premises, talvez já esteja familiarizado com o armazenamento de blocos, arquivos e objetos. Considere as seguintes tecnologias e como elas se relacionam com os sistemas que você pode ter visto antes:
+
+O armazenamento em bloco na nuvem é análogo ao direct-attached storage (DAS) ou a uma rede de storage area network (SAN).
+Os sistemas de armazenamento de arquivos, geralmente, são suportados com um servidor de network attached storage (NAS).
+Adicionar armazenamento em um datacenter tradicional é um processo rígido: as soluções de armazenamento devem ser compradas, instaladas e configuradas. Com a computação em nuvem, o processo é mais flexível. Você pode criar, excluir e modificar soluções de armazenamento em questão de minutos.

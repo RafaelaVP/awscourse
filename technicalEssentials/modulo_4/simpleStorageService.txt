@@ -1,0 +1,130 @@
+Amazon S3
+
+Ao contrário do Amazon Elastic Block Store (Amazon EBS), o Amazon Simple Storage Service (Amazon S3) é uma solução de armazenamento independente que não está vinculada à computação. Ele permite que você recupere seus dados de qualquer lugar da Web. Se você usou um serviço de armazenamento online para fazer backup dos dados da máquina local, provavelmente, você usou um serviço semelhante ao Amazon S3. A principal diferença entre esses serviços de armazenamento online e o Amazon S3 é o tipo de armazenamento.
+
+O Amazon S3 é um serviço de armazenamento de objetos. O armazenamento de objetos armazena dados em uma estrutura plana, usando identificadores exclusivos para procurar objetos quando solicitado. Um objeto é um arquivo combinado com metadados. Você pode armazenar qualquer quantidade desses objetos que desejar. Todas as características do armazenamento de objetos também são características do Amazon S3.
+
+Conceitos do Amazon S3
+
+No Amazon S3, você armazena seus objetos em contêineres chamados buckets. Você não pode fazer upload de objetos, nem mesmo uma única foto, para o Amazon S3 sem criar um bucket primeiro. Ao criar um bucket, você especifica, no mínimo, dois detalhes: a região da AWS na qual deseja que o bucket resida e o nome do bucket.
+
+81.png
+Para escolher uma região, você normalmente selecionará uma região que você usou para outros recursos, como sua computação. Quando você escolhe uma região para seu bucket, todos os objetos que você colocar dentro do bucket serão armazenados de forma redundante em vários dispositivos, em várias zonas de disponibilidade. Esse nível de redundância foi projetado para fornecer, aos clientes do Amazon S3, 99,999999999% de durabilidade e 99,99% de disponibilidade para objetos em um determinado ano.
+
+Quando você escolhe um nome de bucket, ele deve ser exclusivo em todas as contas da AWS. A AWS impede que você escolha um nome de bucket que já tenha sido escolhido por outra pessoa em outra conta da AWS. Depois de escolher um nome, esse nome é seu e não pode ser reivindicado por mais ninguém, a menos que você exclua o bucket, o que libera o nome para outras pessoas usarem.
+
+A AWS usa o nome do bucket como parte do identificador do objeto. No S3, cada objeto é identificado usando um URL, conforme mostrado.
+
+Após http://, você pode ver o nome do bucket. Neste exemplo, o bucket é chamado doc. Em seguida, o identificador usa o nome do serviço s3 e o provedor de serviços, amazonaws. Depois disso, você tem uma pasta implícita dentro do bucket chamada 2006-03-01 e o objeto dentro da pasta chamada AmazonS3.html. Geralmente, o nome do objeto é chamado de nome da chave.
+
+Você pode ter pastas dentro de buckets para ajudá-lo a organizar objetos. No entanto, lembre-se de que nenhuma hierarquia de arquivos real suporta isso no back-end. Em vez disso, é uma estrutura plana em que todos os arquivos e pastas estão no mesmo nível. Usar buckets e pastas implica em uma hierarquia, que cria uma organização compreensível para os usuários.
+
+Casos de uso do Amazon S3
+
+O Amazon S3 é um serviço de armazenamento amplamente utilizado, com muito mais casos de uso do que poderia caber em uma tela. A lista a seguir resume algumas das maneiras mais comuns de usar o Amazon S3:
+
+Backup e armazenamento: o Amazon S3 é um local natural para fazer backup de arquivos, porque é altamente redundante. Como mencionado na última unidade, a AWS armazena seus snapshots do EBS no S3 para aproveitar sua alta disponibilidade.
+Hospedagem de mídia: como você pode armazenar objetos ilimitados e cada objeto individual pode ter até 5 TBs, o Amazon S3 é o local ideal para hospedar uploads de vídeo, foto e música.
+Entrega de software: Você pode usar o Amazon S3 para hospedar suas aplicações de software que os clientes podem obter por download.
+Data lakes: o AmazonS3 é uma base ideal para um data lake devido à sua escalabilidade praticamente ilimitada. Você pode aumentar o armazenamento de gigabytes para petabytes de conteúdo, pagando apenas pelo que você usa.
+Sites estáticos: você pode configurar o bucket do S3 para hospedar um site estático de HTML, CSS e scripts do lado do cliente.
+Conteúdo estático: devido a escalabilidade sem limites, ao suporte para arquivos grandes e ao fato de você acessar qualquer objeto pela Web a qualquer momento, o Amazon S3 é o lugar perfeito para armazenar conteúdo estático.
+Escolha a opção de conectividade certa para os recursos
+
+Tudo no Amazon S3 é privado por padrão. Isso significa que todos os recursos do S3, como buckets, pastas e objetos, somente podem ser visualizados pelo usuário ou pela conta da AWS que criou esse recurso. Os recursos do Amazon S3 são todos privados e protegidos.
+
+Se você decidir que quer que todos na Internet vejam suas fotos, você pode optar por tornar públicos seus buckets, pastas e objetos. Um recurso público significa que todos na internet podem vê-lo. Na maioria das vezes, você não quer que suas permissões sejam tudo ou nada. Normalmente, o ideal é ser mais granular sobre a maneira como você fornece acesso aos seus recursos.
+
+Image39.png
+Para ser mais específico sobre quem pode fazer o quê com seus recursos do Amazon S3, o Amazon S3 oferece dois principais recursos de gerenciamento de acesso: políticas do IAM e políticas de bucket do S3.
+
+Políticas do IAM
+
+Anteriormente, você aprendeu sobre como criar e usar políticas do IAM. Agora, você pode aplicar esse conhecimento ao Amazon S3. Quando as políticas do IAM são anexadas a usuários, grupos e funções do IAM, as políticas definem quais ações elas podem executar. As políticas do IAM não estão vinculadas a nenhum produto da AWS e podem ser usadas para definir o acesso a praticamente qualquer ação da AWS. 
+
+Você deve usar políticas do IAM para buckets privados nos dois cenários a seguir:
+
+Você tem muitos buckets com requisitos de permissão diferentes. Em vez de definir muitas políticas diferentes de bucket do S3, você pode usar políticas do IAM.
+Você quer que todas as políticas estejam em um local centralizado. O uso de políticas do IAM permite gerenciar todas as informações de política em um único local.
+Políticas de buckets do S3
+
+Assim como as políticas do IAM, as políticas de bucket do Amazon S3 são definidas em um formato JSON. A diferença é que as políticas do IAM estão anexas a usuários, grupos e funções, enquanto as políticas de bucket do S3 estão anexas somente aos buckets do S3. As políticas de bucket do S3 especificam quais ações são permitidas ou negadas no bucket.
+
+Por exemplo, se você tiver um bucket chamado employeebucket, poderá anexar uma política de bucket do S3 a ele que permita que outra conta da AWS coloque objetos nesse bucket.
+
+Ou, se você quiser permitir que visualizadores anônimos leiam os objetos no employeebucket, então, você pode aplicar uma política a esse bucket. Isso permite que qualquer pessoa leia objetos no bucket usando "Effect":Allow em "Action:["s3:GetObject"]".
+
+Veja um exemplo de como pode ser a aparência da política de bucket do S3.
+
+{
+"Version":"2012-10-17",
+"Statement":[{
+"Sid":"PublicRead",
+"Effect":"Allow",
+"Principal": "*",
+"Action":["s3:GetObject"],
+"Resource":["arn:aws:s3:::employeebucket/*"]
+}]
+}
+As políticas de bucket do S3 somente podem ser colocadas em buckets e não podem ser usadas para pastas ou objetos. No entanto, a política colocada no bucket se aplica a todos os objetos desse bucket.
+
+Você deve usar as políticas de bucket do S3 nos seguintes cenários:
+
+Você precisa de uma maneira simples de acessar o S3 entre contas, sem usar funções do IAM.
+Suas políticas do IAM se acumulam em relação ao limite de tamanho definido. As políticas de bucket do S3 têm um limite de tamanho maior.
+Criptografia do Amazon S3
+
+O Amazon S3 reforça a criptografia em trânsito (à medida que ela se movimenta de e para o Amazon S3) e em repouso. Para proteger dados em repouso, você pode usar criptografia, da seguinte forma:
+
+Criptografia do lado do servidor: isso permite que o Amazon S3 criptografe seu objeto antes de salvá-lo em discos em seus datacenters e, em seguida, descriptografe quando você faz o download dos objetos.
+Criptografia do lado do cliente: você pode criptografar os dados do lado do cliente e, em seguida, fazer upload dos dados criptografados para o Amazon S3. Nesse caso, você gerencia o processo de criptografia, as chaves de criptografia e todas as ferramentas relacionadas.
+Para criptografar em trânsito, você pode usar criptografia no lado do cliente ou Secure Sockets Layer (SSL).
+
+Versionamento do Amazon S3
+
+Conforme descrito anteriormente, o Amazon S3 identifica objetos em parte usando o nome do objeto. Por exemplo, quando você faz upload de uma foto de funcionário para o Amazon S3, você pode nomear o objeto como employee.jpg e armazená-lo em uma pasta chamada funcionários. Se você não usar o versionamento do Amazon S3, toda vez que você fizer o upload de um objeto chamado employee.jpg para a pasta funcionários, ele substituirá o arquivo original.
+Isso pode ser um problema por vários motivos, incluindo o seguinte:
+
+O nome do arquivo employee.jpg é um nome comum para um objeto de foto de funcionário. Você ou outra pessoa que tenha acesso ao bucket pode não ter a intenção de substituí-lo, mas depois que ele for substituído, o arquivo original não pode ser acessado.
+Talvez você queira preservar versões diferentes de employee.jpg. Sem o versionamento, se você quisesse criar uma nova versão de employee.jpg, você precisaria fazer upload do objeto e escolher um nome diferente para ele. Ter vários objetos, todos com pequenas diferenças nas variações de nomenclatura, pode causar confusão e acúmulo nos buckets do S3.
+Para neutralizar esses problemas, você pode usar o versionamento do S3. O versionamento mantém várias versões de um único objeto no mesmo bucket. Isso preserva versões antigas de um objeto sem usar nomes diferentes, o que ajuda na recuperação de arquivos de exclusões acidentais, substituições acidentais ou falhas de aplicações.
+
+Image28.png
+Se você habilitar o versionamento para um bucket, o Amazon S3 gerará um ID de versão exclusivo automaticamente para o objeto. Em um bucket, por exemplo, você pode ter dois objetos com a mesma chave, mas IDs de versão diferentes, como employeephoto.gif (versão 111111) e employeephoto.gif (versão 121212).
+
+Os buckets habilitados para versionamento permitem recuperar objetos de exclusão ou substituição acidental.
+
+A exclusão de um objeto não remove o objeto permanentemente. Em vez disso, o Amazon S3 coloca um marcador no objeto que mostra que você tentou excluí-lo. Se você quiser restaurar o objeto, você pode remover o marcador e ele restabelecerá o objeto.
+Se você sobrescrever um objeto, isso resultará em uma nova versão de objeto no bucket. Você ainda tem acesso às versões anteriores do objeto.
+Estados de versionamento
+
+Os buckets podem estar em um dos três estados a seguir:
+
+Unversioned (default) (Sem versão (padrão)): nenhum objeto novo e existente no bucket tem uma versão.
+Versioning-enabled: (Versionamento ativado): o versionamento está habilitado para todos os objetos no bucket.
+Versioning-suspended (Versionamento suspenso): o controle de versão está suspenso para novos objetos. Todos os novos objetos no bucket não terão uma versão. No entanto, todos os objetos existentes mantêm suas versões de objetos.
+O estado de versionamento se aplica a todos os objetos no bucket. Os custos de armazenamento são incorridos para todos os objetos em seu bucket, incluindo todas as versões. Para reduzir a conta do Amazon S3, talvez você queira excluir versões anteriores de seus objetos quando eles não forem mais necessários.
+
+Seis classes de armazenamento do Amazon S3
+
+Quando você faz o upload de um objeto para o Amazon S3 e não especifica a classe de armazenamento, você o carrega para a classe de armazenamento padrão que, geralmente, é chamada de armazenamento padrão. Nas lições anteriores, você aprendeu sobre a classe de armazenamento padrão do Amazon S3 sem saber.
+
+As classes de armazenamento do Amazon S3 permitem que você altere sua camada de armazenamento quando suas características de dados mudam. Por exemplo, se você estiver acessando suas fotos antigas com pouca frequência, talvez queira alterar a classe de armazenamento das fotos para economizar custos.
+
+Para saber mais sobre as seis classes de armazenamento do Amazon S3, veja os cartões.
+
+1 dos 6
+
+Automatize transições de camada com gerenciamento do ciclo de vida de objetos
+
+Se você continuar alterando manualmente seus objetos, como fotos dos funcionários, nas camadas de armazenamento, você talvez queira automatizar o processo com uma política de ciclo de vida. Ao definir uma configuração de política de ciclo de vida para um objeto ou grupo de objetos, você pode optar por automatizar duas ações: ações de transição e expiração.
+
+As ações de transição definem quando os objetos devem fazer a transição para outra classe de armazenamento.
+As ações de expiração definem quando os objetos expiram e devem ser excluídos permanentemente.
+Por exemplo, você pode fazer a transição de objetos para a classe de armazenamento S3 Standard-IA 30 dias após criá-los ou arquivar objetos para a classe de armazenamento S3 Glacier um ano após sua criação.
+
+Image1.jpg
+Os seguintes casos de uso são bons candidatos ao gerenciamento do ciclo de vida:
+
+Logs periódicos: se você fizer upload dos logs periódicos para um intervalo, a aplicação pode precisar deles por uma semana ou um mês. Depois disso, talvez você queira excluí-los.
+Dados com diferentes frequências de acesso: alguns documentos são acessados com frequência por um período limitado de tempo. Depois disso, eles serão acessados com pouca frequência. Em algum momento, você pode não precisar de acesso em tempo real a esses objetos, mas sua organização ou as regulamentações podem exigir que você os arquive por um período específico. Depois disso, é possível excluí-los.
