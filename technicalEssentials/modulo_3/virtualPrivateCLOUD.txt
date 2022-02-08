@@ -1,0 +1,40 @@
+Amazon VPC
+
+Uma virtual private cloud (VPC) é uma rede isolada que você cria na Nuvem AWS, semelhante a uma rede tradicional em um datacenter. Ao criar uma VPC, você deve escolher três fatores principais:
+
+Nome da VPC.
+Região em que a VPC ficará ativa. Cada VPC abrange várias zonas de disponibilidade dentro da região selecionada.
+Intervalo de IP para a VPC na notação CIDR. Isso determina o tamanho da rede. Cada VPC pode ter até quatro intervalos de IP /16.
+
+Criar uma sub-rede
+
+Depois de criar sua VPC, você deve criar sub-redes dentro da rede. Pense nas sub-redes como redes menores dentro de sua rede base, ou redes de área locais virtuais (VLANs) em uma rede on-premises tradicional. Em uma rede on-premises, o caso de uso típico para sub-redes é isolar ou otimizar o tráfego de rede. Na AWS, as sub-redes são usadas para fornecer opções de alta disponibilidade e conectividade para seus recursos.
+
+Ao criar uma sub-rede, você deve especificar o seguinte:
+
+A VPC na qual deseja que sua sub-rede fique ativa. Nesse caso: VPC (10.0.0.0/16)
+Zona de disponibilidade na qual você deseja que sua sub-rede fique ativa. Nesse caso: AZ1
+Bloco CIDR para sua sub-rede, que deve ser um subconjunto do bloco CIDR da VPC. Nesse caso: 10.0.0.0/24
+Quando você executa uma instância do EC2, você a executa dentro de uma sub-rede, que estará localizada dentro da zona de disponibilidade escolhida.
+
+Alta disponibilidade com uma VPC
+
+Ao criar suas sub-redes, considere a alta disponibilidade. Para manter redundância e tolerância a falhas, crie pelo menos duas sub-redes configuradas em duas zonas de disponibilidade.
+
+Como você aprendeu anteriormente, lembre-se de que “tudo falha o tempo todo”. Com a rede de exemplo, se uma das AZs falhar, você ainda terá seus recursos disponíveis em outra AZ como backup.
+
+IPs reservados
+
+Para que a AWS configure sua VPC adequadamente, a AWS reserva cinco endereços IP em cada sub-rede. Esses endereços IP são usados para roteamento, Domain Name System (DNS) e gerenciamento de rede.
+
+Por exemplo, considere uma VPC com o intervalo de IP 10.0.0.0/22. A VPC inclui 1.024 endereços IP totais. Isso é dividido em quatro sub-redes de tamanho igual, cada uma com um intervalo de IP /24 com 256 endereços IP. De cada um desses intervalos de IP, existem apenas 251 endereços IP que podem ser usados, porque a AWS reserva cinco.
+
+Os cinco endereços IP reservados podem afetar a forma como você projeta sua rede. Um ponto de partida comum para os iniciantes na nuvem é criar uma VPC com um intervalo de IP de /16 e criar sub-redes com um intervalo de IP de /24. Isso fornece uma grande quantidade de endereços IP para trabalhar nos níveis de VPC e sub-rede.
+
+Gateways
+
+Gateway da Internet
+Para habilitar a conectividade com a Internet para sua VPC, você deve criar um gateway da Internet. Pense no gateway como semelhante a um modem. Assim como um modem conecta seu computador à Internet, o gateway da Internet conecta sua VPC à Internet. Ao contrário de seu modem residencial, que às vezes fica inativo ou offline, um gateway da Internet é altamente disponível e escalável. Depois de criar um gateway da Internet, você o anexa à sua VPC.
+
+Gateway privado virtual
+Um gateway privado virtual conecta sua AWS VPC a outra rede privada. Depois de criar e anexar um gateway privado virtual a uma VPC, o gateway atua como âncora no lado da AWS da conexão. Do outro lado da conexão, você precisará conectar um gateway do cliente à outra rede privada. Um dispositivo de gateway do cliente é um dispositivo físico ou aplicação de software no seu lado da conexão. Depois de ter os dois gateways, você pode estabelecer uma conexão VPN criptografada entre os dois lados.

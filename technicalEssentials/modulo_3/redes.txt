@@ -1,0 +1,56 @@
+Redes definidas
+
+A rede é como você conecta computadores em todo o mundo e permite que eles se comuniquem uns com os outros. Neste curso, você já viu alguns exemplos de redes. Um é a infraestrutura global da AWS. A AWS criou uma rede de recursos com datacenters, zonas de disponibilidade e regiões.
+
+Noções básicas de redes
+
+Uma maneira de pensar em redes é pensar em enviar uma carta. Quando você envia uma carta, você oferece os três elementos a seguir:
+
+A carga útil, ou carta, dentro do envelope.
+O endereço do remetente na seção “De”.
+O endereço do destinatário na seção “Para”.
+Cada endereço deve conter informações específicas, como:
+
+Nome do destinatário e do remetente
+Rua
+Cidade
+Estado ou província
+CEP, área ou código postal
+País
+Você precisa do endereço completo para garantir que sua carta chegue ao seu destino. Sem o endereço correto, os funcionários dos correios não podem entregar a carta corretamente. No mundo digital, os computadores lidam com a entrega de mensagens de forma semelhante. Isso é chamado de roteamento.
+
+Endereços IP
+
+Para rotear corretamente suas mensagens para um local, você precisa de um endereço. Assim como cada casa tem um endereço postal, cada computador tem um endereço IP. No entanto, em vez de usar a combinação de rua, cidade, estado, CEP e país, o endereço IP usa uma combinação de bits, 0s e 1s.
+
+Aqui está um exemplo de um endereço de 32 bits em formato binário:
+
+
+É chamado de 32 bits, porque ele usa 32 dígitos. Sinta-se à vontade para contar
+
+Notação IPv4
+
+Normalmente, você não vê um endereço IP em seu formato binário. Em vez disso, ele é convertido em formato decimal e anotado como um endereço Ipv4.
+
+No diagrama a seguir, os 32 bits são agrupados em grupos de 8 bits, também chamados de octetos. Cada um desses grupos é convertido em formato decimal separado por um ponto.
+
+
+No final, isso é chamado de endereço Ipv4. Isso é importante saber ao tentar se comunicar com um único computador. Mas, lembre-se de que você está trabalhando com uma rede. É aqui que entra a notação CIDR.
+
+Notação CIDR
+
+192.168.1.30 é um único endereço IP. Se você quiser expressar endereços IP entre o intervalo de 192.168.1.0 e 192.168.1.255, como você pode fazer isso?
+
+Uma maneira é usar a notação CIDR (Roteamento entre domínios sem classe). A notação CIDR é uma maneira compactada de especificar um intervalo de endereços IP. A especificação de um intervalo determina quantos endereços IP estão disponíveis para você.
+
+A notação CIDR é mostrada aqui.
+
+76.png
+Começa com um endereço IP inicial e é separado por uma barra (o caractere “/”) seguido por um número. O número no final especifica quantos bits do endereço IP são fixos. Neste exemplo, os primeiros 24 bits do endereço IP são corrigidos. O resto é flexível.
+
+Image35.png
+O total de 32 bits subtraídos por 24 bits fixos deixa 8 bits flexíveis. Cada um desses bits flexíveis pode ser 0 ou 1, porque eles são binários. Isso significa que você tem duas opções para cada um dos 8 bits, fornecendo 256 endereços IP nesse intervalo de IP.
+
+Quanto maior o número após a “/”, menor o número de endereços IP em sua rede. Por exemplo, um intervalo de 192.168.1.0/24 é menor que 192.168.1.0/16.
+
+Ao trabalhar com redes na Nuvem AWS, você escolhe o tamanho da rede usando a notação CIDR. Na AWS, o menor intervalo de IP que você pode ter é /28, que fornece 16 endereços IP. O maior intervalo de IP que você pode ter é um /16, que fornece 65.536 endereços IP.

@@ -1,0 +1,11 @@
+Sub-redes seguras com listas de controle de acesso à rede
+
+Pense em uma lista de controle de acesso à rede (Network ACL) como um firewall no nível da sub-rede. Uma Network ACL permite controlar qual tipo de tráfego tem permissão para entrar ou sair da sub-rede.
+
+Instâncias do EC2 seguras com grupos de segurança
+
+A próxima camada de segurança é para suas instâncias do EC2. Aqui, você pode criar um firewall chamado de grupo de segurança. A configuração padrão de um grupo de segurança bloqueia todo o tráfego de entrada e permite todo o tráfego de saída.
+
+Você pode estar se perguntando: “Isso não impediria que todas as instâncias do EC2 recebessem a resposta de quaisquer solicitações de clientes?” Bem, os grupos de segurança são com estado. Isso significa que eles se lembrarão se uma conexão foi originalmente iniciada pela instância do EC2 ou de fora e permitirá temporariamente que o tráfego responda sem modificar as regras de entrada.
+
+Se você quiser que sua instância do EC2 aceite o tráfego da Internet, você deve abrir portas de entrada. Se você tiver um servidor da Web, talvez seja necessário aceitar solicitações HTTP e HTTPS para permitir esse tipo de tráfego em seu grupo de segurança. 
