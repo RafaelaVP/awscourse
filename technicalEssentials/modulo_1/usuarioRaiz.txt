@@ -1,0 +1,72 @@
+Qual é o grande problema de autenticação?
+
+Quando você configura o acesso a qualquer conta, dois termos surgem com frequência: autenticação e autorização. Embora esses termos possam parecer básicos, você deve compreendê-los completamente para configurar corretamente o gerenciamento de acesso na AWS.
+
+Autenticação
+
+Ao criar sua conta da AWS, você usa a combinação de um endereço de e-mail e uma senha para verificar sua identidade. Se um usuário digitar o e-mail e a senha corretos, o sistema pressupõe que o usuário tem permissão para entrar e concede acesso a ele. Este é o processo de autenticação.
+
+A autenticação garante que o usuário é quem ele diz ser. Nomes de usuário e senhas são os tipos mais comuns de autenticação, mas você também pode trabalhar com outros formulários, como autenticação baseada em token ou dados biométricos, como uma impressão digital. A autenticação simplesmente responde à pergunta: “Você é quem você diz ser?”
+
+Autorização
+
+Depois que você está autenticado e na sua conta da AWS, você pode estar curioso sobre quais ações você pode tomar. É aqui que entra a autorização. Autorização é o processo de dar aos usuários a permissão para acessar recursos e produtos da AWS. A autorização determina se um usuário pode executar determinadas ações, como ler, editar, excluir ou criar recursos. A autorização responde à pergunta: “Quais ações você pode executar?”
+
+Usuário raiz da AWS
+
+Ao criar uma conta da AWS pela primeira vez, você começa com uma única identidade de login que tem acesso completo a todos os produtos e recursos da AWS na conta. Essa identidade é chamada de usuário da conta da AWS e é acessada pelo login com o endereço de e-mail e a senha que você usou para criar a conta. 
+
+Credenciais de usuário raiz da AWS
+
+O usuário raiz da AWS tem dois conjuntos de credenciais associados a ele. Um conjunto de credenciais é o endereço de e-mail e a senha usados para criar a conta. Isso permite que você acesse o Console de Gerenciamento da AWS. O segundo conjunto de credenciais é chamado de chaves de acesso, que permitem que você faça solicitações programáticas do AWS Command Line Interface (AWS CLI) ou da API da AWS.
+
+As chaves de acesso são compostas por duas partes:
+
+ID da chave de acesso, por exemplo, A2lAl5EXAMPLE
+Chave de acesso secreta, por exemplo, wJalrFE/KbEKxE
+Semelhante a uma combinação de nome de usuário e senha, você precisa do ID da chave de acesso e da chave de acesso secreta para autenticar suas solicitações por meio da AWS CLI ou da API da AWS. As chaves de acesso devem ser gerenciadas com a mesma segurança que um endereço de e-mail e senha.
+
+
+
+Práticas recomendadas ao trabalhar com o usuário raiz da AWS
+
+O usuário raiz tem acesso total a todos os produtos e recursos da AWS em sua conta, além de suas informações pessoais e de faturamento. Devido a isso, você deve bloquear com segurança as credenciais associadas ao usuário raiz e não usar o usuário raiz para tarefas diárias.
+
+Para garantir a segurança do usuário raiz, siga estas práticas recomendadas:
+
+Escolha uma senha forte para o usuário raiz
+Nunca compartilhe sua senha de usuário raiz ou chaves de acesso com ninguém
+Desativar ou excluir as chaves de acesso associadas ao usuário raiz
+Não use o usuário raiz para tarefas administrativas ou tarefas diárias
+Quando é OK usar o usuário raiz da AWS? Para algumas tarefas, você desejará usar o usuário raiz da AWS. Confira os links no final desta seção para ler sobre essas exceções.
+
+Exclua suas chaves para ficar seguro
+
+Se você ainda não tem uma chave de acesso para seu usuário raiz da AWS, não crie uma chave a menos que seja realmente necessário. Se você tiver uma chave de acesso para o usuário raiz da sua conta da AWS e quiser excluir as chaves, siga estas etapas:
+
+No Console de Gerenciamento da AWS, acesse a página My Security Credentials (Minhas credenciais de segurança) e faça login com o endereço de e-mail do usuário raiz e a senha.
+Abra a seção Access keys (Chaves de acesso).
+Em Actions (Ações), escolha Delete (Excluir).
+Escolha Yes (Sim).
+Multi-factor authentication (MFA)
+
+Quando você cria uma conta da AWS e faz login pela primeira vez na conta, você usa a autenticação de fator único. A autenticação de fator único é a forma mais simples e comum de autenticação. Ele requer apenas um método de autenticação. Nesse caso, você usa um nome de usuário e uma senha para autenticar como usuário raiz da AWS. Outras formas de autenticação de fator único incluem um pin de segurança ou um token de segurança.
+
+No entanto, às vezes, uma senha de um usuário é fácil de adivinhar. Por exemplo, a senha do seu colega de trabalho Bob, IloveCats222, pode ser fácil para alguém que conhece Bob pessoalmente adivinhar, porque é uma combinação de informações fáceis de se lembrar e inclui alguns fatos sobre Bob (Bob adora gatos, e seu aniversário é 22 de fevereiro). Se um agente malicioso adivinhar ou decodificar a senha de Bob por meio de engenharia social, bots ou roteiros, Bob pode perder o controle de sua conta. Infelizmente, esse é um cenário comum enfrentado por muitos usuários de sites. É por isso que o uso de multi-factor authentication (MFA) é importante para evitar o acesso indesejado à conta.
+
+A MFA precisa de dois ou mais métodos de autenticação para verificar uma identidade. A MFA usa três categorias de informações a seguir:
+
+Algo que você sabe, como o nome de usuário e senha, ou número PIN
+Algo que você tem, como uma senha única de um dispositivo de hardware ou aplicação móvel
+Algo que você é, como tecnologia de reconhecimento facial ou biometria
+Com a combinação dessas informações, os sistemas podem oferecer uma abordagem em camadas para o acesso à conta. Portanto, mesmo que o primeiro método de autenticação, como a senha de Bob, seja decodificado por um agente malicioso, o segundo método de autenticação, como uma impressão digital, fornece outro nível de segurança. Essa camada adicional de segurança pode ajudar a proteger suas contas mais importantes, e é por isso que você deve habilitar a MFA em seu usuário raiz da AWS.
+
+MFA na AWS
+
+Se você habilitar a MFA em seu usuário raiz, deverá apresentar uma parte das informações de identificação das categorias algo que você conhece e algo que você tem. A primeira informação de identificação inserida pelo usuário é uma combinação de e-mail e senha. A segunda informação é um código numérico temporário fornecido por um dispositivo MFA.
+
+Habilitar a MFA adiciona uma camada adicional de segurança, porque exige que os usuários usem um mecanismo de MFA compatível, além de suas credenciais de login normais. Habilitar o MFA na conta de usuário raiz da AWS é uma prática recomendada da AWS.
+
+Dispositivos MFA compatíveis
+
+A AWS oferece suporte a uma variedade de mecanismos de MFA, como dispositivos virtuais com MFA, dispositivos de hardware e chaves de segurança Universal 2nd Factor (U2F). 

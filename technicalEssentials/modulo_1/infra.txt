@@ -1,0 +1,25 @@
+A infraestrutura, como datacenters e conectividade de rede, 
+ainda existe como a base de cada aplicação em nuvem. Na AWS, 
+essa infraestrutura física compõe a infraestrutura global da AWS, na forma de regiões e zonas de disponibilidade.
+
+Regiões
+As regiões são locais geográficos em todo o mundo em que a AWS hospeda seus datacenters. 
+As regiões da AWS têm o nome do local em que elas residem. Por exemplo, nos Estados Unidos, a Região do Norte da Virgínia
+ é chamada de Região do Norte da Virgínia e a Região no Oregon é chamada de Região do Oregon.
+ A AWS tem regiões na Ásia-Pacífico, Canadá, Europa, Oriente Médio e América do Sul, e continuamos a expandir para atender às necessidades de nossos clientes.
+
+ Quando você decidir qual região da AWS hospedar suas aplicações e workloads, considere quatro aspectos principais:
+  latência, preço, disponibilidade do serviço e conformidade.
+
+  Zonas de disponibilidade
+
+Dentro de todas as regiões há um cluster de zonas de disponibilidade (AZs). Uma AZ consiste em um ou mais datacenters com energia, rede e conectividade redundantes. 
+Esses datacenters operam em instalações discretas em localizações não reveladas. Eles são conectados usando links redundantes de alta velocidade e baixa latência.
+
+Escopo dos produtos da AWS
+Dependendo do produto da AWS que você usa, seus recursos são implantados 
+no nível de AZ, Região ou Global. Cada serviço é diferente, portanto, você deve entender como o escopo de um serviço pode afetar a arquitetura da aplicação.
+
+Manter a resiliência
+Para manter sua aplicação disponível, você deve manter alta disponibilidade e resiliência. Uma prática recomendada bem-conhecida para a arquitetura de nuvem é usar serviços gerenciados com escopo da região. Esses serviços têm disponibilidade e resiliência incorporadas. Quando isso não for possível, verifique se sua workload está replicada em várias AZs.
+ No mínimo, você deve usar duas AZs. Dessa forma, se uma AZ falhar, sua aplicação terá a infraestrutura em funcionamento em uma segunda AZ para assumir o tráfego.
