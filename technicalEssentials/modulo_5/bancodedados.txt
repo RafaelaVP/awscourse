@@ -1,0 +1,64 @@
+Histórico por trás de bancos de dados corporativos
+
+Escolher um banco de dados costumava ser uma decisão simples. Os clientes tinham apenas algumas opções para escolher. Normalmente, eles considerariam alguns fornecedores e, em seguida, inevitavelmente escolheriam um para todas as suas aplicações. As empresas geralmente selecionavam uma tecnologia de banco de dados antes de entenderem completamente seu caso de uso. Desde a década de 70, o tipo de banco de dados mais comumente selecionado pelas empresas era um banco de dados relacional.
+
+Bancos de dados relacionais
+
+Um banco de dados relacional organiza dados em tabelas. Os dados em uma tabela podem ser vinculados a dados em outras tabelas para criar relacionamentos, por isso se usa o termo "relacional".
+
+Uma tabela armazena dados em linhas e colunas. Uma linha, geralmente chamada de registro, contém todas as informações sobre uma entrada específica. As colunas descrevem atributos de uma entrada. Aqui está um exemplo de três tabelas em um banco de dados relacional.
+
+Isso mostra uma tabela para livros, uma tabela para vendas e uma tabela para autores. Na tabela de livros, cada linha inclui o ISBN, o título, o autor e o formato do livro. Cada um desses atributos é armazenado em sua própria coluna. A tabela de livros tem algo em comum com as outras duas tabelas: atributo autor. Essa coluna comum cria um relacionamento entre as tabelas.
+
+As tabelas, linhas, colunas e relacionamentos entre eles são chamados de esquema lógico. Com bancos de dados relacionais, um esquema é corrigido. Quando o banco de dados estiver operacional, fica difícil alterar o esquema. Isso requer que a maioria da modelagem de dados seja feita antecipadamente antes que o banco de dados esteja ativo.
+
+Sistema de gerenciamento de banco de dados relacional
+
+Um sistema de gerenciamento de banco de dados relacional (RDBMS) permite criar, atualizar e administrar um banco de dados relacional. Aqui estão alguns exemplos comuns de sistemas de gerenciamento de banco de dados relacionais:
+
+MySQL
+PostgreSQL
+Oracle
+SQL server
+Amazon Aurora
+Você se comunica com um RDBMS usando consultas SQL (linguagem de consulta estruturada), semelhantes ao exemplo a seguir:
+
+SELECT * FROM table_name.
+
+Essa consulta seleciona todos os dados de uma tabela específica. No entanto, a verdadeira eficiência de consultas SQL está na criação de consultas mais complexas que ajudam você a extrair dados de várias tabelas para reunir padrões e respostas para problemas de negócios. Por exemplo, consultar a tabela de vendas e a tabela de livros em conjunto para ver as vendas relacionadas aos livros de um autor. Isso é possível por uma junção.
+
+Benefícios de banco de dados relacional
+
+O banco de dados relacional oferece vários benefícios, incluindo os seguintes:
+
+Junções: você pode unir tabelas, permitindo entender melhor os relacionamentos entre seus dados.
+Redundância reduzida: você pode armazenar dados em uma tabela e referenciá-los em outras tabelas em vez de salvar os mesmos dados em locais diferentes.
+Familiaridade: os bancos de dados relacionais têm sido uma escolha popular desde a década de 70. Devido a essa popularidade, os profissionais técnicos geralmente têm familiaridade e experiência com esse tipo de banco de dados.
+Precisão: os bancos de dados relacionais garantem que seus dados persistam com alta integridade e estejam de acordo com o princípio da atomicidade, consistência, isolamento, durabilidade (ACID).
+Casos de uso de banco de dados relacional
+
+Grande parte do mundo é executada em bancos de dados relacionais. Na verdade, eles estão no centro de muitas aplicações essenciais e alguns podem ser usados em seu dia a dia. Aqui estão alguns casos de uso comuns para bancos de dados relacionais.
+
+Aplicações que têm um esquema sólido que não muda com frequência, como aplicações lift-and-shift que elevam uma aplicação de on-premises e a move para a nuvem, com poucas ou nenhuma modificação.
+Aplicações que precisam de armazenamento persistente que seguem o princípio ACID, como:
+Planejamento de recursos empresariais (ERP)
+Aplicações de gerenciamento de relacionamento com o cliente (CRM)
+Aplicações financeiras e comerciais
+Escolha entre bancos de dados não gerenciados e gerenciados
+
+Se você quiser executar um banco de dados relacional na AWS, primeiro, você precisa selecionar como deseja executá-lo: gerenciado ou não gerenciado. O paradigma dos serviços gerenciados versus não gerenciados é semelhante ao modelo de responsabilidade compartilhada. O modelo de responsabilidade compartilhada distingue as responsabilidades de segurança da AWS e as responsabilidades de segurança do cliente. Da mesma forma, gerenciado versus não gerenciado pode ser entendido como uma troca entre conveniência e controle.
+
+Banco de dados on-premises
+Se você opera um banco de dados relacional on-premises (em seu próprio datacenter), você é responsável por todos os aspectos da operação, incluindo a segurança e a eletricidade do datacenter, o gerenciamento da máquina host, o gerenciamento do banco de dados, a otimização de consultas e o gerenciamento de dados do cliente. Você é responsável por absolutamente tudo, o que significa que você tem controle sobre absolutamente tudo.
+
+Banco de dados não gerenciado
+
+Image32.png
+Agora, suponha que você queira mudar parte do trabalho para a AWS executando seu banco de dados relacional no Amazon EC2. Se você hospedar um banco de dados no Amazon EC2, a AWS cuida da implementação e manutenção da infraestrutura física e do hardware, além da instalação do sistema operacional da instância do EC2. No entanto, você ainda seria responsável por gerenciar a instância do EC2, gerenciar o banco de dados nesse host, otimizar consultas e gerenciar dados do cliente.
+
+Isso é chamado de opção de banco de dados não gerenciado. Nesta opção, a AWS é responsável e tem controle sobre o hardware e a infraestrutura subjacente, além disso, você é responsável e tem controle sobre o gerenciamento do host e do banco de dados.
+
+Banco de dados gerenciado
+
+
+Para transferir mais partes do trabalho para a AWS, você pode usar um serviço de banco de dados gerenciado. Esses serviços fornecem a configuração da instância do EC2 e do banco de dados, além de fornecerem sistemas para alta disponibilidade, escalabilidade, aplicações de patches e backups. No entanto, neste modelo, você ainda é responsável pelo ajuste do banco de dados, otimização de consultas e, claro, garantir que os dados do cliente estejam seguros. Esta opção oferece a maior conveniência, mas a menor quantidade de controle em comparação com as duas opções anteriores.
