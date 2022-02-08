@@ -1,0 +1,68 @@
+Tipos de instância do Amazon EC2
+
+As instâncias do Amazon EC2 são uma combinação de processadores virtuais (vCPUs),
+ memória, rede e, em alguns casos, armazenamento de instâncias e unidades de processamento gráfico (GPUs). Ao criar uma instância do EC2, você precisa 
+ escolher o quanto você precisa de cada um desses componentes.
+
+ A AWS oferece uma variedade de instâncias que diferem com base na performance. Algumas instâncias oferecem mais capacidade do que outras. Para obter uma visão geral dos detalhes da capacidade de uma instância específica, você deve examinar o tipo de instância. Os tipos de instância são compostos por um prefixo que identifica o tipo das workloads para as quais eles são otimizados, seguido pelo tamanho. Por exemplo, o tipo de instância c5.large pode ser dividido da seguinte forma:
+
+c5 determina a família de instâncias e o número da geração. Aqui, a instância pertence à quinta geração de instâncias em uma família de instâncias otimizada para computação genérica.
+large determina a capacidade da instância.
+
+
+Locais de instâncias do EC2
+
+Por padrão, suas instâncias do EC2 são colocadas em uma rede chamada Amazon Virtual Private Cloud (Amazon VPC) padrão. Essa rede foi criada para que você possa começar facilmente a usar o Amazon EC2 sem ter que aprender a criar e configurar uma VPC.
+
+Qualquer recurso que você colocar dentro da VPC padrão será público e acessível pela Internet, portanto, você não deve colocar dados de clientes ou informações privadas nele.
+
+Assim que você estiver mais confortável com a rede na AWS, você deve alterar essa configuração padrão para escolher suas próprias VPCs personalizadas e restringir o acesso com mecanismos adicionais de roteamento e conectividade.
+
+Arquitetar para alta disponibilidade
+
+Na rede, sua instância reside em uma zona de disponibilidade de sua escolha. Como você aprendeu anteriormente, os produtos da AWS com escopo no nível da zona de disponibilidade devem ser arquitetados pensando na alta disponibilidade.
+
+Ciclo de vida da instância do EC2
+
+Uma instância do EC2 faz a transição entre estados diferentes desde o momento em que você a cria até o término.
+
+Quando você executa uma instância, ela entra no estado pendente. Quando uma instância está pendente, o faturamento não foi iniciado. Nesse estágio, a instância está se preparando para entrar no estado em execução. Dependendo do local em que a AWS executa todas as ações necessárias para configurar uma instância, como copiar o conteúdo da AMI para o dispositivo raiz e alocar os componentes de rede necessários.
+
+2
+
+2
+Quando sua instância estiver em execução, ela estará pronta para uso. Este também é o estágio em que o faturamento começa. Assim que uma instância estiver em execução, você poderá executar outras ações na instância, como reinicializar, encerrar, parar e hibernar (stop-hibernate).
+
+3
+
+3
+Reinicializar uma instância, é diferente de executar uma ação de parada e, em seguida, uma ação de início. A reinicialização de uma instância equivale a reinicialização de um sistema operacional. A instância permanece no mesmo computador host e mantém seu endereço de IP público e privado, além de quaisquer dados em seu armazenamento de instância.
+
+4
+
+4
+Normalmente, leva alguns minutos para a reinicialização ser concluída. Quando você interrompe e inicia uma instância, sua instância pode ser colocada em um novo servidor físico subjacente. Portanto, você perde todos os dados no armazenamento de instâncias que estavam no computador host anterior. Quando você interrompe uma instância, a instância obtém um novo endereço IP público, mas mantém o mesmo endereço IP privado.
+
+5
+
+5
+Quando você encerrar uma instância, os armazenamentos de instâncias são apagados e você perde o endereço IP público e o endereço IP privado da máquina. O encerramento de uma instância significa que você não pode mais acessar a máquina.
+
+Diferença entre parar e hibernar (stop-hibernate)
+
+Quando você interrompe uma instância, ela entra no estado de parada até atingir o estado interrompido. A AWS não cobra taxas de uso ou de transferência de dados para sua instância depois que você a interrompe, mas o armazenamento de qualquer volume do Amazon EBS ainda é cobrado. Enquanto sua instância estiver no estado interrompido, você pode modificar alguns atributos, como o tipo de instância. Quando você interrompe sua instância, os dados armazenados na memória (RAM) são perdidos.
+
+Quando você hiberna uma instância, a AWS sinaliza o sistema operacional para executar a hibernação (suspender para disco), o que salva o conteúdo da memória da instância (RAM) no volume raiz do Amazon EBS.
+
+Considere um cenário em que você constrói uma aplicação padrão de três camadas, no qual você tem servidores Web, servidores de aplicação e servidores de banco de dados. De repente, a aplicação que você construiu se torna extremamente popular. Para aliviar algum estresse no banco de dados que oferece suporte a sua aplicação, o ideal é implementar uma camada de back-end personalizada que armazena em cache as informações do banco de dados na memória (RAM). Você decide executar essa solução de cache de back-end personalizada no Amazon EC2.
+
+Nesse cenário, o recurso hibernar (stop-hibernate) seria fundamental para o armazenamento persistente. Isso impediria que você tenha que criar scripts manualmente para salvar os dados da RAM antes de desligar o servidor.
+
+
+Preços
+
+Uma das maneiras de reduzir custos com o Amazon EC2 é escolher a opção de definição de preço certa para a forma como suas aplicações são executadas. A AWS oferece três principais opções de compra para instâncias do EC2: instâncias sob demanda, reservadas e spot.
+
+
+
+

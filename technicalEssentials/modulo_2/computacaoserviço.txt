@@ -1,0 +1,19 @@
+Servidores
+
+O primeiro componente básico que você precisa para hospedar uma aplicação é um servidor. Normalmente, os servidores podem lidar com solicitações de Hypertext Transfer Protocol (HTTP) e enviar respostas aos clientes seguindo o modelo cliente-servidor, embora qualquer comunicação baseada em API também se enquadre nesse modelo. Um cliente é uma pessoa ou computador que envia uma solicitação. Um servidor que lida com as solicitações é um computador, ou coleção de computadores, conectado à Internet que atende sites para usuários da Internet.
+
+Os servidores alimentam sua aplicação fornecendo capacidade de CPU, memória e rede para processar as solicitações dos usuários e transformá-las em respostas. Para contexto, os servidores HTTP comuns incluem:
+
+Opções do Windows, como IIS (Internet Information Services)
+Opções do Linux, como Apache HTTP Web Server, Nginx e Apache Tomcat
+Para executar um servidor HTTP na AWS, você deve encontrar um serviço que forneça poder computacional no Console de Gerenciamento da AWS. Você pode fazer login no console e visualizar a lista completa do AWS Compute Services.
+
+Escolha a opção de computação certa
+
+Se você for responsável por configurar servidores na AWS para executar sua infraestrutura, você tem muitas opções de computação. Você precisa saber qual serviço usar para qual caso de uso. Em um nível fundamental, três tipos de opções de computação estão disponíveis: máquinas virtuais (VMs), serviços de contêiner e sem servidor.
+
+Se você tem conhecimento prévio de infraestrutura, uma máquina virtual, geralmente, é a opção de computação mais fácil de se entender. Isso ocorre, porque uma máquina virtual emula um servidor físico e permite que você instale um servidor HTTP para executar suas aplicações. Para executar máquinas virtuais, você instala um hipervisor em uma máquina host. O hipervisor provisiona os recursos para criar e executar suas VMs.
+
+Na AWS, as máquinas virtuais são chamadas de Amazon Elastic Compute Cloud ou Amazon EC2. Nos bastidores, a AWS opera e gerencia as máquinas host e a camada do hipervisor. A AWS também instala o sistema operacional da máquina virtual, chamado sistema operacional convidado.
+
+Alguns AWS Compute Services usam o Amazon EC2 ou conceitos de virtualização internos. Você deve entender esse serviço antes de avançar para serviços de contêiner e computação sem servidor.
