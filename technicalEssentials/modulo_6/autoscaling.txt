@@ -1,0 +1,111 @@
+Problemas de capacidade
+
+A disponibilidade e a acessibilidade são melhoradas ao adicionar mais um servidor. No entanto, todo o sistema pode ficar indisponível novamente se houver um problema de capacidade. Esta seção analisa o problema de carga para ambos os tipos de sistemas discutidos: ativo-passivo e ativo-ativo.
+
+Escalabilidade vertical
+
+Se muitas solicitações forem enviadas para um único sistema ativo-passivo, o servidor ativo ficará indisponível e executará o failover para o servidor passivo. Mas isso não resolve nada.
+
+Com ativo-passivo, você precisa de escala vertical. Isso significa aumentar o tamanho do servidor. Com instâncias do EC2, você seleciona um tipo maior ou um tipo de instância diferente. Isso só pode ser feito enquanto a instância estiver em um estado interrompido.
+
+Nesse cenário, ocorrem as seguintes etapas:
+
+Interrupção da instância passiva. Isso não afeta a aplicação, porque ela não está assumindo tráfego.
+Alteração do tamanho ou o tipo da instância e, em seguida, início da instância novamente.
+Mudança do tráfego para a instância passiva, tornando-a ativa.
+Parada, alteração do tamanho e início da instância ativa anterior, pois ambas as instâncias devem corresponder.
+Quando o número de solicitações for reduzido, a mesma operação deve ser feita. Mesmo que não haja tantas etapas envolvidas, na verdade é muito trabalho manual. Outra desvantagem é que um servidor somente pode escalar verticalmente até um determinado limite. Quando esse limite é atingido, a única opção é criar outro sistema ativo-passivo e dividir as solicitações e funcionalidades entre eles. Isso pode exigir uma reescrita massiva das aplicações.
+
+É aqui que o sistema ativo-ativo pode ajudar. Quando há muitas solicitações, esse sistema pode ser escalado horizontalmente com a adição de mais servidores.
+
+Escalabilidade horizontal
+
+Como mencionado, para que a aplicação funcione em um sistema ativo-ativo, ela já foi criada como stateless, sem armazenar uma sessão do cliente no servidor. Isso significa que ter dois ou quatro servidores não exigiria alterações na aplicação. Seria apenas uma questão de criar mais instâncias quando necessário e desligá-las quando o tráfego diminuir. O serviço Amazon EC2 Auto Scaling pode cuidar dessa tarefa criando e removendo automaticamente instâncias do EC2 com base em métricas do Amazon CloudWatch.
+
+Você pode ver que há muitas outras vantagens em usar um sistema ativo-ativo em comparação com um ativo-passivo. Modificar sua aplicação para ficar stateless permite a escalabilidade.
+
+ELB com EC2 Auto Scaling
+
+O serviço ELB se integra perfeitamente ao EC2 Auto Scaling. Assim que uma nova instância do EC2 for adicionada ou removida do grupo do EC2 Auto Scaling, o ELB é notificado. No entanto, antes de poder enviar tráfego para uma nova instância do EC2, ele precisa validar se a aplicação em execução na instância do EC2 está disponível.
+
+Essa validação é feita por meio do recurso de verificações de integridade do ELB. O monitoramento é uma parte importante dos balanceadores de carga, porque eles devem rotear o tráfego apenas para instâncias íntegras do EC2. É por isso que o ELB suporta dois tipos de verificações de integridade.
+
+Estabelecimento de uma conexão com uma instância do EC2 de back-end com uso do TCP e marcação da instância como disponível se a conexão for bem-sucedida.
+Fazer uma solicitação HTTP ou HTTPS para uma página da Web especificada e validar se um código de resposta HTTP é retornado.
+Escalonamento tradicional versus autoescalabilidade
+
+Com uma abordagem tradicional de dimensionamento, você compra e provisiona servidores suficientes para lidar com o tráfego em seu pico. No entanto, isso significa que à noite, por exemplo, você pode ter mais capacidade do que o tráfego, o que significa que você está desperdiçando dinheiro. Desligar seus servidores à noite ou em momentos em que o tráfego é mais baixo só economiza eletricidade.
+
+A nuvem funciona de forma diferente com um modelo de pagamento conforme o uso. Você deve desativar os serviços não utilizados, especialmente as instâncias do EC2 que você paga sob demanda. Você pode adicionar e remover servidores manualmente em um horário previsto. Mas, com picos incomuns no tráfego, essa solução leva a um desperdício de recursos com superprovisionamento ou perda de clientes devido ao subprovisionamento.
+
+A necessidade aqui é de uma ferramenta que adiciona e remove automaticamente instâncias do EC2 de acordo com as condições definidas. É exatamente isso que o serviço EC2 Auto Scaling faz.
+
+Amazon EC2 Auto Scaling
+
+O serviço Amazon EC2 Auto Scaling adiciona e remove capacidade para manter uma performance estável e previsível com o menor custo possível. Ao ajustar a capacidade exatamente ao que sua aplicação usa, você paga apenas por aquilo que sua aplicação precisa. E, mesmo com aplicações que têm uso constante, o EC2 Auto Scaling pode ajudar no gerenciamento de frotas. Se uma instância do EC2 tiver um problema, o EC2 Auto Scaling poderá substituir automaticamente a instância. Isso significa que o EC2 Auto Scaling ajuda tanto a escalar sua infraestrutura quanto a garantir alta disponibilidade.
+
+Configurar componentes do EC2 Auto Scaling
+
+Três componentes principais do EC2 Auto Scaling são os seguintes:
+
+Modelo de lançamento ou configuração: qual recurso deve ser escalado automaticamente?
+Grupo do EC2 Auto Scaling: o local em que os recursos devem ser implantados?
+Políticas de escalabilidade: quando os recursos devem ser adicionados ou removidos?
+Modelos de execução
+
+Vários parâmetros são necessários para criar instâncias do EC2: ID da imagem de máquina da Amazon (AMI), tipo de instância, grupo de segurança, volumes adicionais do Amazon Elastic Block Store (EBS) e muito mais. Todas essas informações também são necessárias pelo EC2 Auto Scaling para criar a instância do EC2 em seu nome quando houver necessidade de escalar. Essas informações são armazenadas em um modelo de inicialização.
+
+Você pode usar um modelo de execução para executar manualmente uma instância do EC2. Você também pode usar com o EC2 Auto Scaling. Ele também oferece suporte ao versionamento, o que permite reverter rapidamente se houver um problema ou uma necessidade de especificar uma versão padrão. Dessa forma, ao iterar em uma nova versão, outros usuários podem continuar iniciando instâncias do EC2 com a versão padrão até que você faça as alterações necessárias.
+
+Image17.jpg
+Você pode criar um modelo de inicialização de uma das três maneiras.
+
+A maneira mais rápida de criar um modelo é usar uma instância do EC2 existente. Todas as configurações já estão definidas.
+Outra opção é criar por meio de um modelo já existente ou de uma versão anterior de um modelo de inicialização.
+A última opção é criar um modelo do zero. As seguintes opções precisarão ser definidas: ID da AMI, tipo de instância, par de chaves, grupo de segurança, armazenamento e tags de recurso.
+
+Outra maneira de definir o que o Amazon EC2 Auto Scaling precisa dimensionar é usar uma configuração de execução. É semelhante ao modelo de inicialização, mas não permite o versionamento usando uma configuração de execução criada anteriormente como modelo. Também não permite a criação por meio de uma instância do EC2 já existente. Por esses motivos e para garantir que você esteja recebendo os recursos mais recentes do Amazon EC2, a AWS recomenda que você use um modelo de inicialização em vez de uma configuração de execução.
+
+Grupos do EC2 Auto Scaling
+
+O próximo componente que o EC2 Auto Scaling precisa é de um grupo do EC2 Auto Scaling. Um grupo do Auto Scaling ajuda você a definir o local em que o EC2 Auto Scaling implanta seus recursos. É aqui que você especifica a Amazon VPC e as sub-redes em que a instância do EC2 deve ser executada. O EC2 Auto Scaling cuida da criação das instâncias do EC2 nas sub-redes, portanto, selecione pelo menos duas sub-redes que estejam em diferentes zonas de disponibilidade.
+
+Com os grupos do Auto Scaling, você pode especificar o tipo de compra para as instâncias do EC2. Você pode usar somente sob demanda, somente spot ou uma combinação dos dois, o que permite que você aproveite as instâncias spot com o mínimo de sobrecarga administrativa.
+
+Para especificar quantas instâncias o EC2 Auto Scaling deve iniciar, você tem três configurações de capacidade a serem definidas para o tamanho do grupo.
+
+Mínimo: o número mínimo de instâncias em execução no grupo do Auto Scaling, mesmo que o threshold para diminuir a quantidade de instâncias seja atingido.
+Máximo: o número máximo de instâncias em execução no grupo do Auto Scaling, mesmo que o threshold para adicionar novas instâncias seja atingido.
+Capacidade desejada: a quantidade de instâncias que devem estar em seu grupo do Auto Scaling. Esse número somente pode estar no intervalo ou ser igual ao número mínimo ou máximo. O EC2 Auto Scaling adiciona ou remove instâncias automaticamente para corresponder ao número de capacidade desejado.
+Image11.jpg
+Quando o EC2 Auto Scaling remove instâncias do EC2, porque o tráfego é mínimo, ele continua removendo instâncias do EC2 até atingir uma capacidade mínima. Dependendo da sua aplicação, usar um mínimo de dois é uma boa ideia para garantir alta disponibilidade, mas você sabe quantas instâncias do EC2 no mínimo sua aplicação exige o tempo todo. Ao atingir esse limite, mesmo que o EC2 Auto Scaling seja instruído a remover uma instância, não o faz, para garantir que o mínimo seja mantido.
+
+Por outro lado, quando o tráfego continua crescendo, o EC2 Auto Scaling continua adicionar instâncias do EC2. Isso significa que o custo da sua aplicação também continuará crescendo. É por isso que você deve definir um valor máximo para garantir que ele não ultrapasse seu orçamento.
+
+A capacidade desejada é a quantidade de instâncias do EC2 que o EC2 Auto Scaling cria no momento em que o grupo é criado. Se esse número diminuir, o EC2 Auto Scaling removerá a instância mais antiga por padrão. Se esse número aumentar, o EC2 Auto Scaling criará novas instâncias com o modelo de inicialização.
+
+Disponibilidade com o EC2 Auto Scaling
+
+Números diferentes para capacidade mínima, máxima e desejada são usados para ajustar dinamicamente a capacidade. No entanto, se preferir usar o EC2 Auto Scaling para gerenciamento de frota, você poderá definir as três configurações para o mesmo número, por exemplo: quatro, conforme mostrado na imagem. O EC2 Auto Scaling garantirá que, se uma instância do EC2 não for íntegra, ele a substituirá para garantir que sempre quatro instâncias do EC2 estejam disponíveis. Isso garante alta disponibilidade para suas aplicações.
+
+Image3.jpg
+Automação com políticas de escalabilidade
+
+Por padrão, um grupo do Auto Scaling será mantido na capacidade inicial desejada. Embora seja possível alterar manualmente a capacidade desejada, você também pode usar políticas de escalabilidade.
+
+No módulo AWS Monitoring, você aprendeu sobre as métricas e os alarmes do Amazon CloudWatch. Você usa métricas para manter informações sobre diferentes atributos da sua instância do EC2, como a porcentagem da CPU. Você usa alarmes para especificar uma ação quando um threshold é atingido. Métricas e alarmes são aquilo que as políticas de escalabilidade usam para saber quando agir. Por exemplo, você pode configurar um alarme que indica quando a utilização da CPU está acima de 70% em toda a frota de instâncias do EC2, acionar uma política de escalabilidade para adicionar uma instância do EC2.
+
+Três tipos de políticas de escalabilidade estão disponíveis: escalabilidade de rastreamento simples, de etapas e de destino.
+
+Política de escalabilidade
+Uma política de escalabilidade simples permite que você faça exatamente o que está descrito neste módulo. Você usa um alarme do CloudWatch e especifica o que fazer quando ele é acionado. Isso pode ser várias instâncias do EC2 para adicionar ou remover, ou um número específico para definir a capacidade desejada. Você pode especificar uma porcentagem do grupo em vez de usar uma quantidade de instâncias do EC2, o que faz com que o grupo cresça ou diminua mais rapidamente.
+
+Depois que a política de escalabilidade é acionada, ela aguarda um período de desaquecimento antes de tomar qualquer outra ação. Isso é importante, porque leva tempo para que as instâncias do EC2 sejam iniciadas e o alarme do CloudWatch ainda pode ser acionado enquanto a instância do EC2 está inicializando. Por exemplo, você pode decidir adicionar uma instância do EC2 se a utilização da CPU em todas as instâncias estiver acima de 65%. Você não quer adicionar mais instâncias até que a nova instância do EC2 esteja aceitando tráfego. No entanto, e se a utilização da CPU estivesse acima de 85% em todo o grupo do Auto Scaling? Adicionar uma instância pode não ser o caminho certo. Em vez disso, talvez você queira adicionar outra etapa em sua política de escalabilidade. Infelizmente, uma política de escalabilidade simples não pode ajudar com isso.
+
+Política de escalabilidade de etapas
+É aqui que uma política de escalabilidade de etapas ajuda. As políticas de escalonamento de etapas respondem a alarmes adicionais mesmo quando uma ação de escalabilidade ou substituição de verificação de integridade estiver em andamento. Semelhante ao exemplo acima, você pode decidir adicionar mais duas instâncias quando a utilização da CPU estiver em 85% e mais quatro instâncias quando estiver em 95%.
+
+Decidir quando adicionar e remover instâncias com base nos alarmes do CloudWatch pode parecer uma tarefa difícil. É por isso que existe o terceiro tipo de política de escalabilidade: rastreamento de targets.
+
+Política de dimensionamento para monitoramento de targets
+Se sua aplicação for escalada com base na utilização média da CPU, na utilização média da rede (dentro ou fora) ou na contagem de solicitações, então, esse tipo de política de escalabilidade é aquele que deve ser usado. Tudo o que você precisa fornecer é o valor de destino a ser rastreado e ele cria automaticamente os alarmes necessários do CloudWatch.

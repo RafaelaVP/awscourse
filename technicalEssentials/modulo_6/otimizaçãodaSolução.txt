@@ -1,0 +1,31 @@
+Disponibilidade
+
+A disponibilidade de um sistema, geralmente, é expressa como uma porcentagem do tempo de atividade em um determinado ano ou como um número de noves. Na tabela, você pode ver uma lista das porcentagens de disponibilidade com base no tempo de inatividade por ano, bem como sua notação em noves. 
+
+Para aumentar a disponibilidade, você precisa de redundância. Isso, geralmente, significa mais infraestrutura, mais datacenters, mais servidores, mais bancos de dados e mais replicação de dados. Você pode imaginar que adicionar mais dessa infraestrutura significa um custo maior. Os clientes querem que a aplicação esteja sempre disponível, mas você precisa desenhar uma linha em que adicionar a redundância não seja mais viável em termos de receita.
+
+Melhorar a disponibilidade das aplicações
+
+Na aplicação atual, uma instância do EC2 hospeda a aplicação, as fotos são veiculadas pelo Amazon Simple Storage Service (Amazon S3) e os dados estruturados são armazenados no Amazon DynamoDB. Essa única instância do EC2 é um único ponto de falha para a aplicação.
+
+Mesmo que o banco de dados e o Amazon S3 estejam altamente disponíveis, os clientes não terão como se conectar se a única instância ficar indisponível. Uma maneira de resolver esse problema de ponto único de falha é adicionar mais um servidor.
+
+Segunda zona de disponibilidade
+
+A localização física de um servidor é importante. Além de possíveis problemas de software no nível do sistema operacional ou da aplicação, problemas de hardware devem ser considerados. Pode estar no servidor físico, no rack, no datacenter ou até mesmo na zona de disponibilidade que hospeda a máquina virtual. Para corrigir o problema de localização física, você pode implantar uma segunda instância do EC2 em uma zona de disponibilidade diferente. E, a nova instância também pode resolver problemas com o sistema operacional e a aplicação. No entanto, ter mais de uma instância traz novos desafios.
+
+Replicação, redirecionamento e alta disponibilidade
+
+Processo de replicação
+O primeiro desafio com várias instâncias do EC2 é que você precisa criar um processo para replicar os arquivos de configuração, patches de software e aplicações entre instâncias. O melhor método é automatizar o máximo possível.
+
+Redirecionamento do cliente
+O segundo desafio é como permitir que os clientes (os computadores que enviam solicitações para seu servidor) saibam sobre os diferentes servidores. Várias ferramentas podem ser usadas aqui. O mais comum é usar um Domain Name System (DNS) em que o cliente usa um registro que aponta para o endereço IP de todos os servidores disponíveis. No entanto, o tempo que leva para atualizar a lista de endereços IP e para que os clientes tenham conhecimento dessa mudança, às vezes, chamada de propagação. Isso, geralmente, é a razão pela qual esse método nem sempre é usado.
+
+Outra opção é usar um balanceador de carga, que cuida das verificações de integridade e distribui a carga em cada servidor. Situado entre o cliente e o servidor, um balanceador de carga evita problemas de tempo de propagação. Você aprenderá mais sobre balanceadores de carga na próxima seção.
+
+Tipos de alta disponibilidade
+O último desafio a ser enfrentado ao ter mais de um servidor é o tipo de disponibilidade que você precisa: ativo-passivo ou ativo-ativo.
+
+Ativo-passivo: Com um sistema ativo-passivo, apenas uma das duas instâncias está disponível por vez. Uma vantagem desse método é que, para aplicações com estado em que os dados sobre a sessão do cliente são armazenados no servidor, não haverá problemas, porque os clientes sempre são enviados para o servidor em que a sessão é armazenada.
+Ativo-Ativo: uma desvantagem do ativo-passivo e o ponto positivo do sistema ativo-ativo é a escalabilidade. Ao ter ambos os servidores disponíveis, o segundo servidor pode carregar alguma carga para a aplicação, o que permite que todo o sistema aceite mais carga. No entanto, se a aplicação fosse com estado, haveria um problema se a sessão do cliente não estivesse disponível em ambos os servidores. Aplicações stateless funcionam melhor para sistemas ativo-ativos.
