@@ -74,17 +74,21 @@ Introduction -> :books: Introduction to IAM.
 
 Technical Essentials
 
-Module 1 -> :books:
+Module 1 -> :books: Introduction to Amazon Web Services
 
-Module 2 -> :books:
+Module 2 -> :books: AWS Computing
 
-Module 3 -> :books:
+Module 3 -> :books: Networks
 
-Module 4 -> :books:
+Module 4 -> :books: AWS Storage
 
-Module 5 -> :books:
+Module 5 -> :books: Database
 
-Module 6 -> :books:
+Module 6 -> :books: Serveless
+
+Course AWS Lambda Foundations
+
+Course Amazon API Gateway for Serverless Applications
 
 ## :white_check_mark: Requirements
 
