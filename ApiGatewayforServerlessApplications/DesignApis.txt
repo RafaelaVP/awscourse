@@ -1,0 +1,94 @@
+Tipos de endpoint do API Gateway
+
+Antes de começar a criar suas APIs, você precisará decidir o tipo de endpoint adequado para os padrões de uso e tráfego antecipados.
+
+Endpoint otimizado para borda
+–
+Projetado para ajudar a reduzir a latência do cliente de qualquer lugar na Internet:
+
+Se você escolher um endpoint otimizado para borda, o API Gateway configurará automaticamente uma distribuição do CloudFront totalmente gerenciada para fornecer acesso de latência menor à sua API.
+Essa configuração reduz a latência da primeira ocorrência.
+Outra vantagem de usar uma distribuição gerenciada do CloudFront é que você não precisa pagá-la ou gerenciá-la separadamente do API Gateway.
+
+Endpoint regional
+–
+Projetado para reduzir a latência quando as chamadas são feitas a partir da mesma região que a API:
+
+Neste modelo, o API Gateway não implanta sua própria distribuição do CloudFront na frente da API. Em vez disso, o tráfego destinado à sua API será direcionado diretamente para o endpoint da API na região onde você a implantou.
+Isso proporciona menor latência para aplicações que estão invocando sua API de dentro da mesma região da AWS. Por exemplo, uma API que será acessada a partir de instâncias do EC2 dentro da mesma região.
+Esse endpoint da API também oferece a flexibilidade de implantar sua própria distribuição do CloudFront na frente do API Gateway e controlar essa distribuição usando suas próprias configurações para cenários personalizados. Por exemplo, projetar cenários de recuperação de desastres ou implementar o balanceamento de carga de forma muito personalizada.
+
+Endpoint privado
+–
+Projetado para expor APIs somente dentro de sua VPC:
+
+Esse tipo de endpoint ainda é gerenciado pelo API Gateway, mas as solicitações são roteáveis e só podem ser originadas de uma única VPC controlada por você.
+Destina-se a aplicações que possuem cargas de trabalho muito confidenciais, como dados de saúde ou dados financeiros que não podem ser expostos publicamente na internet.
+Não há taxas de transferência de dados de saída para as APIs privadas. No entanto, cobranças do AWS PrivateLink se aplicam ao uso de APIs privadas no API Gateway.
+
+Cache opcional do API Gateway
+
+Esta é uma configuração opcional, mas que deve ser definitivamente considerada com base em seus casos de uso.
+
+Por que usar o cache do API Gateway
+–
+Quando o cache está habilitado, o API Gateway armazena em cache as respostas do endpoint por um período de vida útil (TTL) especificado. Em seguida, o API Gateway responde à solicitação examinando a resposta do endpoint no cache em vez de fazer uma solicitação ao endpoint. Há dois grandes benefícios de usar o cache.
+
+Reduz a latência geral ao atender solicitações.
+Minimiza o número de solicitações que precisam ser feitas no back-end.
+Isso se torna ainda mais valioso à medida que as dimensões mudam e você deseja reduzir o número de chamadas para seus recursos de back-end.
+
+Configurar o cache por estágio da API
+–
+Os estágios são abordados na seção sobre Criação e implantação de APIs, mas um estágio é uma referência nomeada para uma implantação de API específica.  As opções de configuração incluem:
+
+
+
+Provisionar entre 0,5 GB e 237 GB de cache
+
+Quando o armazenamento em cache está habilitado, você pode configurar o tamanho do cache entre meio gigabyte e 237 gigabytes. Você também pode configurar e personalizar o TTL máximo para cada entrada de cache. 
+
+
+
+Definir vida útil (TTL) em segundos
+
+O valor de TTL padrão para o armazenamento em cache de APIs é de 300 segundos. O valor de TTL máximo é de 3.600 segundos. Quando você define TTL = 0, o armazenamento em cache fica desativado no API Gateway.
+
+
+
+Habilitar criptografia de dados de cache
+
+Você também pode criptografar os dados armazenados em cache se necessário. 
+
+Somente os métodos GET serão armazenados em cache
+
+
+Ao habilitar o armazenamento em cache nas configurações de cache de um estágio, somente os métodos GET são armazenados em cache. Recomendamos que você não armazene em cache outros tipos de chamadas, a menos que tenha motivos muito específicos. 
+
+Configurar por método
+
+Você pode substituir as configurações de nível de estágio por métodos individuais.  Habilite ou desabilite o armazenamento em cache para métodos específicos, aumente ou diminua o TTL ou ative ou desative a criptografia para respostas armazenadas em cache.
+
+Você também pode usar parâmetros no método e formar chaves de cache para que o API Gateway armazene as respostas do método de acordo com os valores de parâmetro usados.
+
+Gerenciamento de cache do API Gateway
+–
+O cache é cobrado a uma tarifa por hora.
+
+Lembre-se de que para armazenar dados em cache é cobrada uma taxa horária que depende do tamanho do cache selecionado, independentemente do número de chamadas de API armazenadas em cache. Portanto, pense bem ao escolher o tamanho do cache e considere a quantidade de dados que você pretende armazenar em cache. 
+
+
+
+Duas maneiras de verificar o cache
+
+Métricas do CloudWatch: CacheHitCount e CacheMissCount
+Crie um timestamp e inclua-o na resposta de sua API
+
+Considerações de definição de preço
+
+Cobrança fixa por milhão de solicitações do API Gateway
+
+Com o API Gateway, você só paga quando suas APIs estiverem em uso, a um custo definido por milhão de solicitações.
+O nível gratuito do API Gateway inclui um milhão de chamadas de API por mês durante até 12 meses.
+Transferência de dados de saída a preços padrão da AWS
+Não há taxas de transferência de dados de saída para APIs privadas. Em vez disso, aplicam-se taxas do AWS Private Link.

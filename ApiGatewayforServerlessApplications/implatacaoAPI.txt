@@ -1,0 +1,39 @@
+Anatomia da chamada de API
+
+O URL de invocação da API base segue um padrão
+
+Você implanta sua API em um estágio.
+
+Personalizar o nome do host
+
+Você pode tornar o URL mais significativo para seus usuários usando um nome de domínio personalizado como host e escolhendo um caminho base para mapear o URL alternativo para sua API.  Você precisará de um certificado SSL/TLS para o nome de domínio. O API Gateway é integrado ao Amazon Certificate Manager (ACM) e permite importar seu próprio certificado ou gerar um certificado SSL com o ACM.
+
+Etapas para criar uma API com o API Gateway
+
+As etapas básicas para criar uma API a partir do console do API Gateway podem ser mapeadas diretamente para o detalhamento da API do URL de invocação:
+
+Criar e nomear API
+Escolha a opção Create API (Criar API) no console. Outra escolha importante que você deve fazer para salvar sua API é o tipo de endpoint. 
+
+Quando você salva sua API, a AWS gera uma ID exclusiva para esse nome de API, que se torna parte do nome do host no URL de invocação.
+
+
+Adicionar recursos
+Use a opção Actions/Create Resource (Ações/Criar recurso) para criar um recurso. 
+
+Você pode criar relacionamentos pai-filho entre seus recursos para uma API e especificar parâmetros de caminho usando colchetes.
+
+
+
+Imagem destacando um recurso configurado como proxy e o parâmetro proxy no URL da API
+Configurar recurso como proxy
+Se você escolher esta opção, será criado automaticamente um método HTTP especial chamado “Any” (Qualquer). Um recurso proxy é expresso por um parâmetro de caminho de recurso especial {proxy+}, geralmente conhecido como um parâmetro de caminho voraz. O sinal + indica os recursos filhos que estão anexados a ele.
+
+Criar método
+Selecione Create Method (Criar Método) no menu Action (Ação) e escolha um verbo HTTP. Uma vez feito isso, você deverá concluir os outros itens de configuração, incluindo tempo limite e tipo de integração. 
+
+Dependendo do tipo de integração selecionado, você terá que fornecer detalhes diferentes. Vamos falar um pouco sobre as opções de integração.
+
+Tipos de integração do API Gateway
+ função lambda, endpoint http, serviço aws, mock, link vpc.
+

@@ -1,0 +1,52 @@
+Métricas do Amazon CloudWatch para o API Gateway
+
+O API Gateway tem sete métricas prontas para uso, e todas elas são gratuitas no nível do estágio:
+
+contagem
+–
+Número total de solicitações de API em um período
+
+Latência
+–
+O tempo desde o momento em que o API Gateway recebe uma solicitação de um cliente e até retornar uma resposta para o cliente. Inclui a latência de integração e outras sobrecargas do API Gateway.
+
+IntegrationLatency
+–
+O tempo que o API Gateway leva para receber uma resposta do back-end depois de retransmitir uma solicitação para o back-end.
+
+
+4XXError
+–
+Erros no lado do cliente registrados em um período especificado
+
+
+5XXError
+–
+Erros no lado do servidor registrados em um período especificado
+
+CacheHitCount
+–
+O número de solicitações atendidas pelo cache de API em um período determinado
+
+CacheMissCount
+–
+O número de solicitações atendidas pelo back-end em um determinado período quando o armazenamento em cache da API está habilitado
+
+Sobrecarga do API Gateway
+
+Duas métricas importantes são Latency (Latência) eIntegration Latency (Latência de integração). A diferença entre essas duas métricas fornece a sobrecarga do API Gateway para ajudar você a ajustar suas aplicações.
+
+Amazon CloudWatch Logs para o API Gateway
+
+Além das métricas do CloudWatch, você também pode aprender muito com o CloudWatch Logs sobre o desempenho das APIs. O API Gateway tem dois tipos de CloudWatch Logs integrados:
+Registro de execução em logs
+–
+Dois níveis de registro em log, erro e informações
+Opcionalmente, registrar o conteúdo da solicitação/corpo do método
+Definir globalmente no estágio ou substituir por método
+
+Registro de acesso em logs
+–
+Detalhes sobre quem acessou sua API
+IP, HttpMethod, Usuário, Protocolo, Hora
+Formato personalizável para logs analisáveis por máquina
