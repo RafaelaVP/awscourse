@@ -1,0 +1,27 @@
+Como a implantação serverless é diferente?
+
+Implantação baseada em servidor versus serverless
+
+A implantação baseada em servidor é como se mudar para uma casa. 
+Você precisa saber o que a infraestrutura suporta e como você e sua família se encaixam nela, mas você está trabalhando com o que está disponível. 
+Arrume suas coisas e entregue para o pessoal da mudança. É como fazer o check-in de seu código e o DevOps colocá-lo em uma compilação e implantá-lo.
+
+Serverless é mais como construir uma casa.
+
+Você está projetando toda a estrutura de acordo com especificações muito detalhadas. 
+Você transmite isso por meio de uma planta. A planta permite que você saiba exatamente como será a casa antes de ser construída.
+
+Implantação serverless
+
+Quando você implanta funções do Lambda, essa planta é como um modelo do AWS CloudFormation.
+
+Você modela sua infraestrutura em um modelo do CloudFormation e a usa para implantar a pilha desejada sem escrever scripts personalizados.
+
+Slide_155_Image.PNG
+O modelo é então a única fonte de verdade para implantar essa pilha em qualquer conta.
+
+E cada vez que a função for chamada, ela será executada usando informações do modelo do CloudFormation.
+
+Usar o SAM como estrutura de trabalho da aplicação serverless
+
+Há uma série de estruturas serverless disponíveis. Encontre uma estrutura que funcione com sua cadeia de ferramentas de desenvolvedor e minimize o trabalho para especificar os detalhes do seu ambiente de execução. Para nossos exemplos, veremos o SAM.

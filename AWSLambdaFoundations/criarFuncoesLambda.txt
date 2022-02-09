@@ -1,0 +1,97 @@
+Modelo de programação do AWS Lambda
+
+Trazer o seu próprio código
+
+Com o Lambda, você pode usar a linguagem e o IDE com os quais você está mais familiarizado e trazer o código que você já escreveu. O código pode precisar de alguns ajustes para torná-lo serverless.
+
+Para obter a lista mais recente de tempos de execução compatíveis, consulte AWS Lambda Runtimes no AWS Lambda Developer Guide.
+
+Você também pode usar tempos de execução personalizados.
+
+Começar com o método handler
+
+O método handler é o ponto de entrada que o AWS Lambda chama para começar a executar sua função do Lambda. O método handler sempre usa dois objetos:
+ o objeto de evento e o objeto de contexto.
+
+ Melhores práticas de design
+
+Separe a lógica de negócios principal do método handler.
+Isso não só torna seu código mais compatível, como também permite que você direcione testes de unidade em seu código sem se preocupar com a configuração da função.
+
+Gravar funções modulares
+–
+Crie funções de propósito único.
+
+Siga os mesmos princípios que você aplicaria ao desenvolvimento de microsserviços.
+
+Tratar funções como stateless
+–
+Nenhuma informação sobre o estado deve ser salva dentro do contexto da própria função. 
+
+Como suas funções só existem quando há trabalho a ser feito, é particularmente importante que aplicações serverless tratem cada função como stateless.
+
+O DynamoDB é serverless e é dimensionado horizontalmente para lidar com suas invocações do Lambda. Ele também tem latência de um milissegundo, o que o torna uma ótima opção para armazenar informações de estado. 
+
+Considere o Amazon ElastiCache se você precisar colocar sua função do Lambda em uma VPC. Pode ser menos dispendioso que o DynamoDB. 
+
+O Amazon S3 pode ser usado como uma maneira barata de armazenar dados de estado, se a taxa de transferência não for crítica e o tipo de dados de estado que você está salvando não for alterado rapidamente.
+
+Incluir apenas o que você precisa
+–
+Minimize as dependências do pacote de implantação e seu tamanho.
+Isso pode ter um impacto significativo no tempo de inicialização para sua função. Por exemplo, escolha apenas os módulos de que você precisa — não inclua um SDK da AWS inteiro. 
+
+Reduza o tempo necessário para o Lambda abrir pacotes de implantação criados em Java. 
+Coloque seus arquivos de dependência.jar em um diretório /lib separado. 
+
+Escolha estruturas (de trabalho) de injeção de dependência Java (IoC) mais simples. 
+Por exemplo, escolha Dagger ou Guice, em vez de opções mais complexas como Spring Framework.
+
+Melhores práticas para escrever código
+
+Incluir instruções de registro em log
+–
+As funções do Lambda podem e devem incluir instruções de registro em log que são gravadas no CloudWatch.
+ Aqui está um exemplo de registro em log usando a função logger no Python.
+
+ import logging
+ logger = logging.getLogger()
+ logger.setLevel(logging.INFO)
+ def my_logging.handler(event, context):
+    logger.info(' event {}'.format(event))
+    logger.error('something went wrong')
+    return 'Hello from Lambda!'
+
+Incluir informações de resultados
+As funções devem fornecer ao Lambda informações sobre os resultados de sua execução.
+Use a codificação de devolução apropriada para a linguagem selecionada para sair do código. 
+Para linguagens como Node.js, o Lambda fornece métodos adicionais no objeto de contexto para 
+retornos de chamada. 
+Você pode usar esses métodos de objeto de contexto para informar ao para encerrar sua função do Lambda 
+e, opcionalmente, valores de retorno para o chamador.
+
+NODEJS --> Exemplo
+
+exports.myHandler = function(event, context, callback) {
+    ... function code 
+    callback(null, "some sucess message");
+    //or 
+    //callback("some error type");
+}
+
+Usar variáveis de ambiente
+–
+Aproveite as variáveis de ambiente para parâmetros operacionais.
+
+Eles permitem que você passe as configurações atualizadas sem alterações no próprio código. 
+
+Você também pode usar variáveis de ambiente para armazenar informações confidenciais exigidas pela função.
+
+Evitar código recursivo
+–
+Evite uma situação em que uma função se chama.
+
+Isso pode continuar a gerar novas invocações que fariam você perder o controle de sua simultaneidade. 
+
+Você pode definir rapidamente o limite de execução simultânea como zero usando o console ou a linha de comando para limitar imediatamente as solicitações se você implantar acidentalmente código recursivo.
+

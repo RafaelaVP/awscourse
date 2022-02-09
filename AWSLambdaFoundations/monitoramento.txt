@@ -1,0 +1,44 @@
+Monitorar com o CloudWatch
+
+O CloudWatch fornece sete métricas fora da caixa para o Lambda:
+
+Invocações
+–
+Número de vezes que uma função é chamada em resposta a uma chamada de API de evento ou chamada.
+
+Esta métrica está disponível diretamente no painel do Lambda.
+
+Erros
+–
+Número de invocações que falharam devido a erros na função 
+(código de resposta 4XX). 
+
+Esta métrica está disponível diretamente no painel do Lambda.
+
+Duração
+–
+Tempo decorrido a partir do momento em que o código da função começa a ser executado quando ele é interrompido.
+
+Essa métrica está disponível diretamente no painel do Lambda.
+
+Limitações
+–
+Número de tentativas de invocação de função do Lambda que foram limitadas devido a taxas de invocação que excedem os limites simultâneos do cliente (código de erro 429).
+
+Esta métrica está disponível diretamente no painel do Lambda.
+
+IteratorAge
+–
+Emitida apenas para invocações baseadas em streaming. 
+Mede a idade do registro mais recente para cada lote de registros processados. 
+Idade é a diferença entre a hora em que o Lambda recebeu o lote e a hora em que o último registro no lote foi gravado no stream.
+
+ConcurrentExecutions
+–
+Mede a soma de execuções simultâneas para uma determinada função em um determinado momento. 
+Deve ser visualizada como uma métrica média se agregada durante um período. 
+
+UnreservedConcurrentExecutions
+–
+Representa a soma da simultaneidade das funções que não têm um limite de simultaneidade personalizado especificado.
+ Deve ser visualizada como uma métrica média se agregada durante um período.

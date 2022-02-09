@@ -1,0 +1,25 @@
+Visão geral das permissões
+
+Função de execução
+
+Função de execução dá permissão para interagir com serviços
+
+FUNÇÃO DO IAM
+
+Selecionada ou criada ao criar uma função do Lambda
+A política do IAM inclui ações que podem ser realizadas com o recurso
+Política de confiança que permite que o Lambda assuma a função
+O criador deve ter permissão para iam:PassRole
+
+Política de recursos
+
+A política de recursos dá permissão para invocar
+
+Uma política de recursos é usada para informar ao serviço do Lambda quais eventos têm permissão 
+para invocar a função do Lambda. As políticas de recursos também facilitam a concessão de acesso à função do Lambda em todas as contas da AWS. 
+
+Política de função do Lambda
+
+Política associada a uma fonte de eventos "push"
+Criada ao adicionar um trigger a uma função do Lambda
+Permite que a fonte de eventos execute a ação lambda:InvokeFunction

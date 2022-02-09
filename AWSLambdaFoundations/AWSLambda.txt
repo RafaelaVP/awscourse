@@ -1,0 +1,18 @@
+O que é o AWS Lambda?
+
+Computação serverless
+
+A computação serverless amplia a abstração da infraestrutura na nuvem. Você se concentra no código de suas aplicações.
+ Há algumas coisas para pensar de forma diferente quando você escreve e testa seu código para computação serverless. 
+Mas a sobrecarga reduzida permite que você experimente e inove mais rapidamente uma vez que você se adapta a uma abordagem serverless.
+
+Implantação e Operações
+
+Configurar uma Instância
+Atualizar sistema operacional
+Instalar plataforma de aplicativos
+Criar e implantar aplicativos
+Configurar a escalabilidade automática e o balanceamento de carga
+Proteger e monitorar instâncias continuamente
+Monitorar e manter aplicativos
+

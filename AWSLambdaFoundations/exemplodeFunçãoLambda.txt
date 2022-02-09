@@ -1,0 +1,15 @@
+Função Lambda em NodeJS, invocada pelo Amazon s3
+
+{
+    "Records": [
+        "s3": {
+            "object": { ... } ---| *event -> Aceita uma lista de registros do Amazon S3.
+        }                        
+    ]
+}
+exports.handler = function (event, context, callback) {
+ //->* Eegistra a carga útil do evento de entrada->//             console.log(`Event:` + Json.stringify(event))
+ //->*Em seguida, invoca uma chamada de volta para sair da função//callback(null, 'Hello world!')
+}
+ 
+

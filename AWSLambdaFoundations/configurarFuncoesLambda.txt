@@ -1,0 +1,25 @@
+Memória e tempo limite
+
+Três componentes principais da configuração
+
+Memória, tempo limite e simultaneidade estão no centro de como cada função executa. 
+Para obter a melhor combinação para a experiência desejada do cliente, teste em condições reais 
+em relação ao pico de volume e use opções de monitoramento como o Amazon CloudWatch e o AWS X-Ray para garantir os resultados desejados para sua aplicação.
+
+Encontre o ponto ideal de poder vs. duração
+
+Dependendo da função, você pode achar que o nível de memória mais alto pode realmente custar menos porque a função pode ser concluída muito mais rapidamente do que na configuração de memória mais baixa.
+
+Você pode usar uma ferramenta de código aberto chamada Lambda Power Tuning para encontrar a melhor configuração para uma função. 
+A ferramenta pode ajudar você a visualizar e ajustar a configuração de memória/energia das funções do Lambda. A ferramenta é executada em sua própria conta da AWS — com a tecnologia AWS Step Functions — e oferece suporte a três estratégias de otimização: custo, velocidade e balanceamento.
+
+Simultaneidade e escalabilidade
+
+Execuções simultâneas
+
+A simultaneidade é a unidade na qual a escala é medida. Pense em execuções simultâneas como a capacidade de um restaurante 
+para servir um certo número de clientes em um momento específico.
+
+Simultaneidade provisionada
+
+Você pode configurar parte do limite de simultaneidade disponível como simultaneidade provisionada.

@@ -1,0 +1,29 @@
+Fontes de eventos
+
+Muitos serviços podem ser fontes de eventos
+
+Uma fonte de eventos é a entidade que publica eventos e uma função do Lambda
+ é o código personalizado que processa os eventos. A configuração dos serviços como triggers de eventos é referida como mapeamento de fonte de eventos. 
+
+ Modelos de execução para invocar funções do Lambda
+
+Um push síncrono é como o correio que entrega um pacote e aguarda uma assinatura para concluir a entrega. Um push assíncrono é o carteiro que deixa a correspondência em sua caixa de correio e você pega quando quiser.
+
+Pense em eventos de sondagem como o serviço Lambda observando as malas na esteira de bagagens do aeroporto e entregando-as em lotes na sua casa.
+
+Os eventos síncronos esperam uma resposta imediata da invocação da função.
+
+Com esse modelo de execução, não há repetição interna no Lambda. Você deve gerenciar sua estratégia de repetição dentro do código da aplicação.
+
+Para invocar o Lambda de forma síncrona via API, use RequestResponse.
+
+Os eventos assíncronos são enfileirados e o solicitante não aguarda a conclusão da função. 
+
+Este modelo faz sentido para processos em lote. Com um evento assíncrono, o Lambda tenta a invocação automaticamente por mais duas em seu nome. Você também tem a opção de ativar uma fila de cartas mortas na sua função do Lambda.
+
+
+Em novembro de 2019, duas novas opções de tratamento de erros foram adicionadas para oferecer mais controle sobre registros com falha de fontes de eventos assíncronas: Idade Máxima do Evento e Máximo de Tentativas.
+
+
+
+Para invocar funções de forma assíncrona via API, use Event.
